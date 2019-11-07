@@ -7,7 +7,7 @@ Nathan Xuan
 
 Mackenzie Matscherz
 
-Rae Painter
+[Rae Painter](team/Rae_Painter.md)
 
 [Chris Williams](team/Chris_Williams.md)
 
