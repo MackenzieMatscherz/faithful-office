@@ -5,7 +5,7 @@ Group members:
 
 Nathan Xuan 
 
-Mackenzie Matscherz
+[Mackenzie Matscherz](team/mackenziematscherz.md)
 
 [Rae Painter](team/Rae_Painter.md)
 
