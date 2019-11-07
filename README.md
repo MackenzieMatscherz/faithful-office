@@ -3,7 +3,7 @@
 
 Group members:
 
-Nathan Xuan 
+[Nathan Xuan](team/faithful-office_Nathan_Xuan) 
 
 [Mackenzie Matscherz](team/mackenziematscherz.md)
 
