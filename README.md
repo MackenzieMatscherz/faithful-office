@@ -1,3 +1,17 @@
 # faithful-office
 326 Group Project
-test stuff 
+
+Group members: 
+Nathan Xuan 
+
+
+
+Overview: 
+
+
+
+Two topics: 
+
+
+
+
