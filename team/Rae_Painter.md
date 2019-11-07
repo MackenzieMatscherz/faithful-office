@@ -1,0 +1,2 @@
+**Rae Painter**
+I know quite a bit of Javascript, Java, some Python and C, and I have good familiarity with HTML. I haven't had experience with specific web development outside of this class but I'm pretty interested in going more in depth with node.js. I know a little bit of SQL but it's been a while. 
