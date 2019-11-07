@@ -5,7 +5,7 @@ Group members:
 Nathan Xuan 
 Mackenzie Matscherz
 Rae Painter
-Chris Williams
+[Chris Williams](team/Chris_Williams.md)
 
 
 Overview: 
