@@ -19,7 +19,6 @@ Overview:
 
 Two topics: 
 Database Storage
-Ajax
-
+Mobile
 
 
