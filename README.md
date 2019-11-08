@@ -1,9 +1,11 @@
 # faithful-office
 326 Group Project
+**Working Title:**
+Untitled
 
 Group members:
 
-Nathan Xuan 
+[Nathan Xuan](team/faithful-office_Nathan_Xuan) 
 
 [Mackenzie Matscherz](team/mackenziematscherz.md)
 
@@ -23,7 +25,6 @@ allows artists to share their work with the community.
 
 Two topics: 
 Database Storage
-Ajax
-
+Mobile
 
 
