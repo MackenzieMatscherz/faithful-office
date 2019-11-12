@@ -1,35 +1,40 @@
 <!DOCTYPE html>
+
 <html>
-  <head>
-    <title>Map of UMass</title>
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="utf-8">
-    <style>
-      #map {
-        height: 100%;
-      }
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="map">place holder for map</div>
-    <script>
-      var map;
-      function initMap() {
-        /*
-          Maps initialized to UMass Amherst with latlng(42.38,-72.5)
-        */
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 42.38, lng: -72.5},
-          zoom: 13
-        });
-      }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfaOZf7J91g0jwdI2vwiz5fcxApSkkL9s&callback=initMap"
-    async defer></script>
-  </body>
+	<head>
+    	<title>Simple Map</title>
+    	<meta name="viewport" content="initial-scale=1.0">
+    	<meta charset="utf-8">
+    	<style>
+      		/* Always set the map height explicitly to define the size of the div
+       		* element that contains the map. */
+      		#map {
+        		height: 100%;
+      		}
+      		html, body {
+        		height: 100%;
+        		margin: 0;
+        		padding: 0;
+      		}
+    	</style>
+  	</head>
+  	<body>
+    	<div id="map">stuff in the div</div>
+    	<script>
+      		var map;
+      		function initMap() {
+				/*
+				Maps initialized to UMass Amherst with latlng(42.391155,-72.526711)
+				*/
+				var campus = {lat: 42.391155, lng: -72.526711};
+				map = new google.maps.Map(document.getElementById('map'), {
+					center: campus, zoom: 13
+				});
+				var marker = new google.maps.Marker({position:campus, map:map});
+			}
+    	</script>
+    	<script async defer
+      		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfaOZf7J91g0jwdI2vwiz5fcxApSkkL9s&callback=initMap">
+    	</script>
+  	</body>
 </html>
