@@ -19,22 +19,37 @@
     	</style>
   	</head>
   	<body>
-    	<div id="map">stuff in the div</div>
-    	<script>
+		<div id="map"></div>
+		
+    	<script>			
       		var map;
       		function initMap() {
 				/*
 				Maps initialized to UMass Amherst with latlng(42.391155,-72.526711)
 				*/
-				var campus = {lat: 42.391155, lng: -72.526711};
+				var campus = {lat: 42.3896166, lng: -72.52946829999999};
 				map = new google.maps.Map(document.getElementById('map'), {
-					center: campus, zoom: 13
+					center: campus, 
+					zoom: 13
 				});
 				var marker = new google.maps.Marker({position:campus, map:map});
+				///////////
+				var infocontent = document.createElement("div");
+				var text = document.createElement('text');
+				text.textContent = "hello";
+				var pic = document.createElement("picture");
+				pic.src = "image.jpg"
+				infocontent.appendChild(pic);
+				var infoWindow = new google.maps.InfoWindow;
+
+				marker.addListener('click',function(){
+					infoWindow.setContent("<img src = 'image.jpg'>");
+					infoWindow.open(map,marker);
+				});
 			}
     	</script>
     	<script async defer
-      		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfaOZf7J91g0jwdI2vwiz5fcxApSkkL9s&callback=initMap">
+      		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8mx9V-1MYT8wwnjno_8ZlEAO3t6E7dIE&callback=initMap">
     	</script>
   	</body>
 </html>
