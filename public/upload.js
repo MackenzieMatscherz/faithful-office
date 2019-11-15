@@ -16,18 +16,18 @@ async function findImage(image) {
   return await Image.findOne({ image })
 }
 
-;(async () => {
+getElementById("submitForm").onsubmit = function() {
   const connector = mongoose.connect(connectionString)
 
 
-  let image = await connector.then(async () => {
+  let image = connector.then(async () => {
     return findImage(imagename)
   })
 
   if (!image) {
-    image = await createImage(imagename)
+    image = createImage(imagename)
   }
 
   console.log(image)
   process.exit(0)
-})()
+};
