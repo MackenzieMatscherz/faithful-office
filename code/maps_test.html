@@ -16,6 +16,21 @@
         		margin: 0;
         		padding: 0;
       		}
+			.pics{
+				height: 50%;
+				width: 50%;
+				margin-left: 0px;
+				margin-right: auto;
+				display: block;
+			}
+			.list{
+				margin:auto;
+				text-align: right;
+			}
+			.gm-style-iw{
+				width:20;
+				height:100;
+			}
     	</style>
   	</head>
   	<body>
@@ -33,18 +48,33 @@
 					zoom: 13
 				});
 				var marker = new google.maps.Marker({position:campus, map:map});
-				///////////
+
 				var infocontent = document.createElement("div");
-				var text = document.createElement('text');
-				text.textContent = "hello";
-				var pic = document.createElement("picture");
-				pic.src = "image.jpg"
+
+				var list = document.createElement('ul');
+				var item1 = document.createElement('li');
+				var item2 = document.createElement('li');
+				item1.textContent = "test message 1";
+				item2.textContent = "test message 2";
+				list.appendChild(item1)
+				list.appendChild(item2)
+				list.classList.add("list");
+
+				var pic = document.createElement("img");
+				pic.src = "image.jpg";
+				pic.classList.add('pics')
+
 				infocontent.appendChild(pic);
+				infocontent.appendChild(list);
 				var infoWindow = new google.maps.InfoWindow;
 
-				marker.addListener('click',function(){
-					infoWindow.setContent("<img src = 'image.jpg'>");
+				marker.addListener('mouseover',function(){
+					infoWindow.setContent(infocontent);
 					infoWindow.open(map,marker);
+				});
+
+				marker.addListener('mouseout',function(){
+					infoWindow.close();
 				});
 			}
     	</script>
