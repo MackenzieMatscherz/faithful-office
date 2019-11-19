@@ -39,12 +39,12 @@ app.post('/submit', upload.single('fileToUpload'), (req,res) => {               
      });
 }) 
   
-app.get(('/success'), (req, res) => {
+app.get(('/success'), (req, res) => {                                             //successfully uploaded image
     mongoose.connect(connectionString, async function(err, client){
         if(err) {
             console.log('Error occurred while connecting to MongoDB Atlas...\n',err);
         }
-        const image = await Image.findOne({}, (err, results) => {
+        const image = await Image.findOne({}, (err, results) => {                   //shows random image from database
             res.set('Content-Type', 'image/jpg');
             res.send(results.picture);
         })
