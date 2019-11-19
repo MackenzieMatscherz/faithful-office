@@ -2,7 +2,8 @@ const mongoose = require('mongoose')
 
 const ImageSchema = new mongoose.Schema({
   picture: {
-    type: Buffer,
+     data: Buffer, 
+     contentType: String 
   },
   location: {
     type: [Number],

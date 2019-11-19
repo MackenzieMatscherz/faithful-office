@@ -5,8 +5,7 @@ const express = require('express')
 //const bodyParser = require('body-parser')
 const fs = require('fs-extra')
 const path = require('path')
-const upload = multer({limits: {fileSize: 2000000 },dest:'/uploads/'})
-
+const upload = multer({limits: {fileSize: 2000000 },dest:'/uploads'})
 const imageSchema = require('../models/ImageSchema.js')
 const Image = mongoose.model('image', imageSchema, 'image')
 
@@ -27,11 +26,12 @@ app.post('/submit', upload.single('fileToUpload'), (req,res) => {               
         }
         console.log('Connected...');
         data = new Image({ 
-            "picture": Buffer.from(image, 'base64'),
+            "picture.data": Buffer.from(image, 'base64'),
             "location": [longitude, latitude],
             "artist": artist,
             "uploader": uploader
         })
+        data.picture.contentType = req.file.mimetype
         data.save();
         console.log(data);
 
@@ -44,9 +44,10 @@ app.get(('/success'), (req, res) => {                                           
         if(err) {
             console.log('Error occurred while connecting to MongoDB Atlas...\n',err);
         }
+        //console.log("Finding Image");
         const image = await Image.findOne({}, (err, results) => {                   //shows random image from database
-            res.set('Content-Type', 'image/jpg');
-            res.send(results.picture);
+            res.set('Content-Type', results.picture.contentType);
+            res.send(results.picture.data);
         })
         
     });
