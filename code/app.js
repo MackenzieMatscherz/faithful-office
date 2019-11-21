@@ -56,6 +56,19 @@ app.get(('/success'), (req, res) => {                                           
 app.get('/',function(req,res){                              //The page that launches when opening site
     res.sendFile(path.join(__dirname+'/index.html'));
 }).listen(3000) 
+
+app.get('/maps_test', function(req, res){
+    mongoose.connect(connectionString, async function(err, client){
+        if(err) {
+            console.log('Error occurred while connecting to MongoDB Atlas...\n',err);
+        }
+        //console.log("Finding Image");
+        const image = await Image.findOne({}, (err, results) => {                   //pull a random image from database
+        })
+        
+    });
+    res.sendFile(path.join(__dirname+'/maps_test.html'));
+})
   
   
 console.log("server listening at port 3000"); 
