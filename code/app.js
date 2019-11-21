@@ -58,7 +58,15 @@ app.get('/',function(req,res){                              //The page that laun
 }).listen(3000) 
 
 app.get('/maps_test', function(req, res){
-    res.type("html")
+    mongoose.connect(connectionString, async function(err, client){
+        if(err) {
+            console.log('Error occurred while connecting to MongoDB Atlas...\n',err);
+        }
+        //console.log("Finding Image");
+        const image = await Image.findOne({}, (err, results) => {                   //pull a random image from database
+        })
+        
+    });
     res.sendFile(path.join(__dirname+'/maps_test.html'));
 })
   
