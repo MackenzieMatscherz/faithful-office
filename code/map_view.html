@@ -42,7 +42,7 @@
       <p style="text-align:left;"><b>Untitled</b></p> 
       <p style="text-align:right;
                 font-size:50%;">
-      <A HREF="file:///C:/Users/macke/Documents/GitHub/faithful-office/code/List_view.html/">List View</A>
+      <A HREF="List_view.html">List View</A>
       |   
       <A HREF="file:///C:/Users/macke/Desktop/CS%20326/submission_form.html/">Submission Form </A></p>
     </HEADER>
@@ -73,6 +73,7 @@
 				list.appendChild(item2)
 				list.classList.add("list");
 
+        //create test image
 				var pic = document.createElement("img");
 				pic.src = "image.jpg";
 				pic.classList.add('pics')
@@ -85,11 +86,9 @@
 					infoWindow.setContent(infocontent);
 					infoWindow.open(map,marker);
 				});
-
 				marker.addListener('mouseout',function(){
 					infoWindow.close();
 				});
-
 				marker.addListener('click',function(){
     				window.open( "img.html", "_blank"); 
 				});
