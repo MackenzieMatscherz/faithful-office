@@ -3,6 +3,8 @@
 <HTML>
   <HEAD>
     <TITLE>Untitled | Home</TITLE>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
     <STYLE>
       *{box-sizing: border-box;}
       header {
@@ -12,6 +14,25 @@
         font-size: 30px;
         color: black;
       }
+      #map {
+        		height: 100%;
+      		}
+      		html, body {
+        		height: 100%;
+        		margin: 0;
+        		padding: 0;
+      		}
+			.pics{
+				max-height: 200px;
+				margin-left: 0px;
+				margin-right: auto;
+			}
+			.list{
+				margin: auto;
+				vertical-align: top;
+				text-align: left;
+				display: inline-block;
+			}
     </STYLE>
 
   </HEAD>
@@ -21,10 +42,61 @@
       <p style="text-align:left;"><b>Untitled</b></p> 
       <p style="text-align:right;
                 font-size:50%;">
-      <A HREF="file:///C:/Users/macke/Documents/GitHub/faithful-office/code/List_view.html/">List View</A>
+      <A HREF="List_view.html">List View</A>
       |   
       <A HREF="file:///C:/Users/macke/Desktop/CS%20326/submission_form.html/">Submission Form </A></p>
     </HEADER>
+    
+    <div id="map"></div>
+		
+    	<script>			
+      		var map;
+      		function initMap() {
+				/*
+				Maps initialized to UMass Amherst with latlng(42.391155,-72.526711)
+				*/
+				var campus = {lat: 42.3896166, lng: -72.52946829999999};
+				map = new google.maps.Map(document.getElementById('map'), {
+					center: campus, 
+					zoom: 13
+				});
+				var marker = new google.maps.Marker({position:campus, map:map});
+
+				var infocontent = document.createElement("div");
+
+				var list = document.createElement('ul');
+				var item1 = document.createElement('li');
+				var item2 = document.createElement('li');
+				item1.textContent = "test message 1";
+				item2.textContent = "test message 2";
+				list.appendChild(item1)
+				list.appendChild(item2)
+				list.classList.add("list");
+
+        //create test image
+				var pic = document.createElement("img");
+				pic.src = "image.jpg";
+				pic.classList.add('pics')
+
+				infocontent.appendChild(pic);
+				infocontent.appendChild(list);
+				var infoWindow = new google.maps.InfoWindow;
+
+				marker.addListener('mouseover',function(){
+					infoWindow.setContent(infocontent);
+					infoWindow.open(map,marker);
+				});
+				marker.addListener('mouseout',function(){
+					infoWindow.close();
+				});
+				marker.addListener('click',function(){
+    				window.open( "img.html", "_blank"); 
+				});
+			}
+    	</script>
+    	<script async defer
+      		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8mx9V-1MYT8wwnjno_8ZlEAO3t6E7dIE&callback=initMap">
+    	</script>
   </BODY>
 
 </HTML>
