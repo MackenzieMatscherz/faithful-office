@@ -12,7 +12,6 @@
         font-size: 30px;
         color: black;
       }    
-         
     </STYLE>
 
   </HEAD>
@@ -20,9 +19,35 @@
   <BODY>
     <HEADER>
       <h2>Untitled</h2>
-      <p>Map View   |   Submit Art</p>
+      <p style="text-align:right; font-size:75%;">
+        <A HREF="map_view.html">Map View</A>
+        |   
+        <A HREF="submission_form.html">Submit Art</A>
+      </p>
     </HEADER>
-   
+
+    <div id = "placeholder"></div>
+    <script>
+    //populates the website with placeholders for pics 
+    for(i=0;i<10;i++)
+    {
+      var x = document.createElement("div");
+      // x.style.backgroundColor = "grey";
+      var pic = document.createElement("img");
+			pic.src = "../images/image.jpg";
+      x.appendChild(pic);
+      x.innerHTML = "placeholder" + (i+1);
+      var bigdiv = document.getElementById("placeholder");
+      bigdiv.appendChild(x);
+    }
+    // var x = document.createElement("div");
+    // var pic = document.createElement("img");
+    // pic.src = "../images/image.jpg";
+    // x.appendChild(pic);
+    // var bigdiv = document.getElementById("placeholder");
+    // bigdiv.appendChild(x);
+
+    </script>
   </BODY>
 
 </HTML>
