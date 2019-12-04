@@ -9,6 +9,10 @@ const ImageSchema = new mongoose.Schema({
     type: [Number],
     required: [false]
   },
+  title: {
+    type: String,
+    required: [false]
+  },
   artist: {
     type: String,
     required: [false]
