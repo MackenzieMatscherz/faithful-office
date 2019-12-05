@@ -19,8 +19,9 @@ function initMap() {
 
     marker.addListener('mouseover',function(){
         //infoWindow.setContent(infocontent);
-        var info = createInfoWindow(pic,"hello, world")
-        info.open(map,marker);
+        // var info = createInfoWindow(pic,"hello, world")
+        // info.open(map,marker);
+        var marker = dropMarker(campus,map,pic,"hello, world")
         marker.addListener('mouseout',function(){
             info.close();
         });
@@ -30,6 +31,15 @@ function initMap() {
         window.open( "../images/image.jpg", "_blank"); 
     });
 }
+
+
+function dropMarker(position,map,image,message){
+    var marker = new google.maps.Marker({position:position, map:map});
+    var info = createInfoWindow(image,message);
+    info.open(map,marker);
+    return marker;
+}
+
 
 
 function createInfoWindow(image,message)
