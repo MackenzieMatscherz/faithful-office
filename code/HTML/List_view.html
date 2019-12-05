@@ -1,53 +1,57 @@
 <!DOCTYPE html>
-
 <HTML>
-  <HEAD>
-    <TITLE>Untitled | List View</TITLE>
-    <STYLE>
-      *{box-sizing: border-box;}
-      header {
-        background-color: #208D20;
-        padding: 1px;
-        text-align: left;
-        font-size: 30px;
-        color: black;
-      }    
-    </STYLE>
+    <HEAD>
+        <TITLE>Untitled | List View</TITLE>
+        <STYLE>
+            * {
+                box-sizing: border-box;
+                font-family: Helvetica;
+            }
 
-  </HEAD>
-
-  <BODY>
-    <HEADER>
-      <h2>Untitled</h2>
-      <p style="text-align:right; font-size:75%;">
-        <A HREF="map_view.html">Map View</A>
-        |   
+            header {
+                background-color: #208D20;
+                padding: 1px;
+                text-align: left;
+                font-size: 30px;
+                color: black;
+            }
+        </STYLE>
+    </HEAD>
+    <BODY>
+        <HEADER>
+            <h2>Untitled</h2>
+            <p style="text-align:right; font-size:75%;">
+                <A HREF="map_view.html">Map View</A>
+                |   
         <A HREF="submission_form.html">Submit Art</A>
-      </p>
-    </HEADER>
+            </p>
+        </HEADER>
+        <div id="placeholder"></div>
+       
+       <script>
+          //populates the website with placeholders for pics 
+          // for (i = 0; i < 9; i++) {
+          //     var x = document.createElement("div");
+          //     // x.style.backgroundColor = "grey";
+          //     var pic = document.createElement("img");
+          //     pic.src = "../images/image.jpg";
+          //     x.appendChild(pic);
+          //     x.innerHTML = "placeholder" + (i + 1);
+          //     var bigdiv = document.getElementById("placeholder");
+          //     bigdiv.appendChild(x);
+          // }
+          var x = document.createElement("div");
+          var pic = document.createElement("img");
+          pic.src = "../images/photo-big.jpg";
+          x.appendChild(pic);
+          var bigdiv = document.getElementById("placeholder");
+          bigdiv.appendChild(pic);
 
-    <div id = "placeholder"></div>
-    <script>
-    //populates the website with placeholders for pics 
-    for(i=0;i<10;i++)
-    {
-      var x = document.createElement("div");
-      // x.style.backgroundColor = "grey";
-      var pic = document.createElement("img");
-			pic.src = "../images/image.jpg";
-      x.appendChild(pic);
-      x.innerHTML = "placeholder" + (i+1);
-      var bigdiv = document.getElementById("placeholder");
-      bigdiv.appendChild(x);
-    }
-    // var x = document.createElement("div");
-    // var pic = document.createElement("img");
-    // pic.src = "../images/image.jpg";
-    // x.appendChild(pic);
-    // var bigdiv = document.getElementById("placeholder");
-    // bigdiv.appendChild(x);
+          var y = document.createElement("img");
+          y.src = "../images/image.jpg";
+          bigdiv.appendChild(y);
 
-    </script>
-  </BODY>
 
+        </script>
+    </BODY>
 </HTML>
