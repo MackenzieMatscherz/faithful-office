@@ -21,6 +21,7 @@ app.post('/submit', upload.single('fileToUpload'), (req,res) => {               
     var image = fs.readFileSync(req.file.path).toString('base64');
     var longitude = req.body.longitude
     var latitude = req.body.latitude
+    var title = req.body.title
     var artist = req.body.artist
     var uploader = req.body.uploader
     //console.log(image);
@@ -32,7 +33,8 @@ app.post('/submit', upload.single('fileToUpload'), (req,res) => {               
         console.log('Connected...');
         data = new Image({ 
             "picture.data": Buffer.from(image, 'base64'),
-            "location": [longitude, latitude],
+            "location": [latitude, longitude],
+            "title": title,
             "artist": artist,
             "uploader": uploader
         })
