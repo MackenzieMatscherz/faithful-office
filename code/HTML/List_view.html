@@ -9,7 +9,7 @@
             }
 
             header {
-                background-color: #208D20;
+                background-image: linear-gradient(90deg, #9AC991, #85DE73,#4CAF38,#269911,#89B281);
                 padding: 1px;
                 text-align: left;
                 font-size: 30px;
@@ -48,19 +48,50 @@
               }
             }
 
+            .button{
+              display:inline-block;
+              padding:0.35em 1.2em;
+              border: 0.1em solid #FFFFFF;
+              margin: 0 0.3em 0.3em 0;
+              border-radius: 0.12em;;
+              box-sizing: border-box;
+              text-decoration: none;
+              font-family: Helvetica;
+              font-weight: 300;
+              color: #FFFFFF;
+              text-align: center;
+              transition: all 0.2s;
+            }
+
+            .button:hover{
+              color:#000000;
+              background-color: #FFFFFF;
+            }
+
+            @media all and (max-width:30em){
+              .button{
+                display:block;
+                margin:0.4em auto;
+              }
+            }
         </STYLE>
     </HEAD>
     <BODY>
         <HEADER>
             <h2>Untitled</h2>
             <p style="text-align:right; font-size:75%;">
-                <A HREF="map_view.html">Map View</A>
-                |   
-                <A HREF="submission_form.html">Submit Art</A>
+                <!-- <button onclick = "window.location.href = 'map_view.html';" class = "button">Map View</button> -->
+                <A HREF="map_view.html" class = "button">Map View</A>
+                <!-- <button onclick = "window.location.href = 'submission_form.html';">Submit Art</button> -->
+                <A HREF="submission_form.html" class = "button">Submit Art</A>
             </p>
         </HEADER>
 
         <div class="row"></div> 
         <script src = "populatesPage.js"></script>
+        <script>
+          var link = document.getElementsByClassName("link");
+
+        </script>
     </BODY>
 </HTML>
