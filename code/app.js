@@ -13,9 +13,18 @@ var app=express();
 app.use(express.static(__dirname));
 
   
-app.get('/',function(req,res){                                                          //The page that launches when opening site
+app.get('/',function(req,res){                                                          //The page that launches when opening site - Map View
+    //res.sendFile(path.join(__dirname+'/HTML/map_view.html'));
     res.sendFile(path.join(__dirname+'/index.html'));
-}).listen(3000) 
+}).listen(3000)
+
+app.get('/map_view', function(req, res){                                                //Secondary Map View Route for testing
+    res.sendFile(path.join(__dirname+'/HTML/map_view.html'));
+});
+
+app.get('/submission_form', function(req, res){                                         //Submission Form page
+    res.sendFile(path.join(__dirname+'/HTML/submission_form.html'));
+});
 
 app.post('/submit', upload.single('fileToUpload'), (req,res) => {                       //Posting an image and its details
     var image = fs.readFileSync(req.file.path).toString('base64');
@@ -60,9 +69,6 @@ app.get(('/success'), function(req, res){                                       
     });
 });
 
-app.get('/maps_test', function(req, res){                                               //Map test page
-    res.sendFile(path.join(__dirname+'/maps_test.html'));
-});
 
 app.get(('/pull_data'), function(req, res){                                             //pull data for map
     var curr_longitude = req.query.longitude;
@@ -82,5 +88,8 @@ app.get(('/pull_data'), function(req, res){                                     
     });
 });
   
+app.get('/grid_view', function(req, res){                                               //Grid View page
+    res.sendFile(path.join(__dirname+'/HTML/grid_view.html'));
+});
   
 console.log("server listening at port 3000"); 
