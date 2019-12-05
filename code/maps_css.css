@@ -1,0 +1,12 @@
+.pics{
+	max-height: 200px;
+	margin-left: 0px;
+	margin-right: auto;
+}
+.list{
+	margin: auto;
+	vertical-align: top;
+	text-align: left;
+	display: inline-block;
+	list-style-type: none;
+}
