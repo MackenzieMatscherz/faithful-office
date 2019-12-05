@@ -23,6 +23,15 @@ function createImage(src){
     var pic = document.createElement("img")
     pic.src = src
     pic.classList.add("image")
+    pic.addEventListener('click',function(){
+        window.open(src, "_blank"); 
+    });
+    pic.addEventListener('mouseover',function(){
+        pic.style.filter = "blur(3px)";
+    });
+    pic.addEventListener('mouseout',function(){
+        pic.style.filter = "blur(0px)";
+    });
     return pic;
 }
 
