@@ -6,7 +6,7 @@ const ImageSchema = new mongoose.Schema({
      contentType: String 
   },
   location: {
-    type: [Number],
+    type: [Number],           //Latitude, Longitude
     required: [false]
   },
   title: {

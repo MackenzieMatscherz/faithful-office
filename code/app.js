@@ -13,14 +13,24 @@ var app=express();
 app.use(express.static(__dirname));
 
   
-app.get('/',function(req,res){                                                          //The page that launches when opening site
+app.get('/',function(req,res){                                                          //The page that launches when opening site - Map View
+    //res.sendFile(path.join(__dirname+'/HTML/map_view.html'));
     res.sendFile(path.join(__dirname+'/index.html'));
-}).listen(3000) 
+}).listen(3000)
+
+app.get('/map_view', function(req, res){                                                //Secondary Map View Route for testing
+    res.sendFile(path.join(__dirname+'/HTML/map_view.html'));
+});
+
+app.get('/submission_form', function(req, res){                                         //Submission Form page
+    res.sendFile(path.join(__dirname+'/HTML/submission_form.html'));
+});
 
 app.post('/submit', upload.single('fileToUpload'), (req,res) => {                       //Posting an image and its details
     var image = fs.readFileSync(req.file.path).toString('base64');
     var longitude = req.body.longitude
     var latitude = req.body.latitude
+    var title = req.body.title
     var artist = req.body.artist
     var uploader = req.body.uploader
     //console.log(image);
@@ -32,7 +42,8 @@ app.post('/submit', upload.single('fileToUpload'), (req,res) => {               
         console.log('Connected...');
         data = new Image({ 
             "picture.data": Buffer.from(image, 'base64'),
-            "location": [longitude, latitude],
+            "location": [latitude, longitude],
+            "title": title,
             "artist": artist,
             "uploader": uploader
         })
@@ -58,9 +69,6 @@ app.get(('/success'), function(req, res){                                       
     });
 });
 
-app.get('/maps_test', function(req, res){                                               //Map test page
-    res.sendFile(path.join(__dirname+'/maps_test.html'));
-});
 
 app.get(('/pull_data'), function(req, res){                                             //pull data for map
     var curr_longitude = req.query.longitude;
@@ -71,14 +79,24 @@ app.get(('/pull_data'), function(req, res){                                     
         }
         //console.log("Finding Image");
         const images = await Image.aggregate([
-            { "$match": { "$expr": { "$lte": [Math.sqrt(Math.pow((curr_longitude - "$location.0"),2) + Math.pow((curr_latitude - "$location.1"),2)), 1 ] } } }
+            { "$match": { "$expr": { 
+                "$lte": [Math.sqrt(Math.pow((curr_longitude - "$location.0"),2) + Math.pow((curr_latitude - "$location.1"),2)), 1 ]
+                //"$lte": [] 
+            } } }
           ])
             //TODO: Create proper Great Circle distance calculation - Currently finds absolute long/lat number <= 1
             //d=2*asin(sqrt((sin((lat1-lat2)/2))^2 + cos(lat1)*cos(lat2)*(sin((lon1-lon2)/2))^2))
-        console.log(images);
+        //console.log(images);
         res.json(images);
     });
 });
   
+app.get('/grid_view', function(req, res){                                               //Grid View page
+    res.sendFile(path.join(__dirname+'/HTML/grid_view.html'));
+});
+
+app.get('/frame_test', function(req, res){                                               
+    res.sendFile(path.join(__dirname+'/create_frames_test.html'));
+});
   
 console.log("server listening at port 3000"); 
