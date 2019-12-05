@@ -6,21 +6,9 @@
     	<meta name="viewport" content="initial-scale=1.0">
     	<meta charset="utf-8">
     	<link rel="stylesheet" type="text/css" href="/CSS/maps_css.css">
-    	<!-- This style section breaks the map when run on app.js if removed and put into a separate style sheet-->
-    	<style>
-    		#map {
-    			height: 100%;
-    		}
-    		html, body {
-    			height: 100%;
-    			margin: 0;
-    			padding: 0;
-    		}
-    	</style>
   	</head>
   	<body>
 		<div id="map"></div>
-		
     	<script>			
       		var map;
       		function initMap() {
@@ -34,23 +22,39 @@
 				});
 				var marker = new google.maps.Marker({position:campus, map:map});
 
-				var infocontent = document.createElement("div");
+				var infocontent = document.createElement('div');
 
-				var list = document.createElement('ul');
-				var item1 = document.createElement('li');
-				var item2 = document.createElement('li');
-				item1.textContent = "test message 1";
-				item2.textContent = "test message 2";
-				list.appendChild(item1)
-				list.appendChild(item2)
-				list.classList.add("list");
+				var textcontainer = document.createElement('div');
+				textcontainer.classList.add('textcontainer')
+
+				var div1 = document.createElement('div');
+				var item1 = document.createElement('label');
+				var item2 = document.createElement('p');
+				item1.textContent = "Title";
+				item2.textContent = "untitled";
+				div1.appendChild(item1);
+				div1.appendChild(item2);
+
+				var div2 = document.createElement('div');
+				var item3 = document.createElement('label');
+				var item4 = document.createElement('p');
+				item3.textContent = "Artist";
+				item4.textContent = "unknown";
+				div2.appendChild(item3);
+				div2.appendChild(item4);
+
+				textcontainer.appendChild(div1);
+				textcontainer.appendChild(div2);
+
+				infocontent.appendChild(textcontainer);
 
 				var pic = document.createElement("img");
 				pic.src = "/images/image.jpg";
 				pic.classList.add('pics')
 
+				
 				infocontent.appendChild(pic);
-				infocontent.appendChild(list);
+
 				var infoWindow = new google.maps.InfoWindow;
 
 				marker.addListener('mouseover',function(){

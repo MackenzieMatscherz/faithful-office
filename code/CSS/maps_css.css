@@ -1,7 +1,18 @@
+#map {
+	height: 100%;
+}
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+    		}
 .pics{
-	max-height: 200px;
 	margin-left: 0px;
 	margin-right: auto;
+	width: 100%;
+}
+.textcontainer{
+	overflow: auto;
 }
 .list{
 	margin: auto;
@@ -9,4 +20,9 @@
 	text-align: left;
 	display: inline-block;
 	list-style-type: none;
+}
+#div{
+	display: inline-block;
+	float:left;
+	width: 50%;
 }
