@@ -21,10 +21,11 @@ function initMap() {
         //infoWindow.setContent(infocontent);
         var info = createInfoWindow(pic,"hello, world")
         info.open(map,marker);
+        marker.addListener('mouseout',function(){
+            info.close();
+        });
     });
-    marker.addListener('mouseout',function(){
-        info.close();
-    });
+    
     marker.addListener('click',function(){
         window.open( "../images/image.jpg", "_blank"); 
     });
@@ -36,7 +37,7 @@ function createInfoWindow(image,message)
     var infocontent = document.createElement("div");    //puts infocontent in infowindow
     var list = document.createElement('ul');
     var item1 = document.createElement('li');
-    item1.textContent = "message";
+    item1.textContent = message;
     list.appendChild(item1);
     list.classList.add("list")
 
