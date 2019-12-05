@@ -32,9 +32,9 @@ function createImage(src){
         window.open(src, "_blank"); 
     });
     pic.addEventListener('mouseover',function(){
-        pic.style.filter = "brightness(125%)";
+        pic.style.filter = "brightness(120%)";
         pic.style.zIndex = 50;
-        pic.style.width = "120%";
+        pic.style.width = "102%";
     });
     pic.addEventListener('mouseout',function(){
         pic.style.filter = "brightness(100%)";
