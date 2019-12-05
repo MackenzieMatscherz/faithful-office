@@ -23,14 +23,25 @@ function createImage(src){
     var pic = document.createElement("img")
     pic.src = src
     pic.classList.add("image")
+    pic.style.zIndex = -1;
+
+
+
+    //interactivity
     pic.addEventListener('click',function(){
         window.open(src, "_blank"); 
     });
     pic.addEventListener('mouseover',function(){
-        pic.style.filter = "blur(3px)";
+        pic.style.filter = "brightness(125%)";
+        pic.style.zIndex = 50;
+        pic.style.width = "120%";
     });
     pic.addEventListener('mouseout',function(){
-        pic.style.filter = "blur(0px)";
+        pic.style.filter = "brightness(100%)";
+        pic.style.width = "100%";
+        pic.style.position = "relative";
+
+        pic.style.zIndex = 0;
     });
     return pic;
 }
