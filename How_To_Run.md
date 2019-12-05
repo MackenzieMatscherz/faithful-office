@@ -1,4 +1,4 @@
-In /faithful-office/public run:
+In /faithful-office/code run:
     
     node app.js
 
