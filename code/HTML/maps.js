@@ -11,32 +11,19 @@ function initMap() {
     });
     var marker = new google.maps.Marker({position:campus, map:map});
 
-    var infocontent = document.createElement("div");
-
-    var list = document.createElement('ul');
-    var item1 = document.createElement('li');
-    var item2 = document.createElement('li');
-    item1.textContent = "test message 1";
-    item2.textContent = "test message 2";
-    list.appendChild(item1)
-    list.appendChild(item2)
-    list.classList.add("list");
-
 //create test image
     var pic = document.createElement("img");
     pic.src = "../images/image.jpg";
     pic.classList.add('pics')
 
-    infocontent.appendChild(pic);
-    infocontent.appendChild(list);
-    var infoWindow = new google.maps.InfoWindow;
 
     marker.addListener('mouseover',function(){
-        infoWindow.setContent(infocontent);
-        infoWindow.open(map,marker);
+        //infoWindow.setContent(infocontent);
+        var info = createInfoWindow(pic,"hello, world")
+        info.open(map,marker);
     });
     marker.addListener('mouseout',function(){
-        infoWindow.close();
+        info.close();
     });
     marker.addListener('click',function(){
         window.open( "../images/image.jpg", "_blank"); 
@@ -44,7 +31,18 @@ function initMap() {
 }
 
 
-function createMarker(lat,lng)  //drops marker on map at (lat,lng)
+function createInfoWindow(image,message)
 {
+    var infocontent = document.createElement("div");    //puts infocontent in infowindow
+    var list = document.createElement('ul');
+    var item1 = document.createElement('li');
+    item1.textContent = "message";
+    list.appendChild(item1);
+    list.classList.add("list")
 
+    infocontent.appendChild(image)
+    infocontent.appendChild(list)
+    var infoWindow = new google.maps.InfoWindow;
+    infoWindow.setContent(infocontent)
+    return infoWindow;
 }
