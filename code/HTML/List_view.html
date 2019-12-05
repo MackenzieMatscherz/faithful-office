@@ -1,53 +1,66 @@
 <!DOCTYPE html>
-
 <HTML>
-  <HEAD>
-    <TITLE>Untitled | List View</TITLE>
-    <STYLE>
-      *{box-sizing: border-box;}
-      header {
-        background-color: #208D20;
-        padding: 1px;
-        text-align: left;
-        font-size: 30px;
-        color: black;
-      }    
-    </STYLE>
+    <HEAD>
+        <TITLE>Untitled | List View</TITLE>
+        <STYLE>
+            * {
+                box-sizing: border-box;
+                font-family: Helvetica;
+            }
 
-  </HEAD>
+            header {
+                background-color: #208D20;
+                padding: 1px;
+                text-align: left;
+                font-size: 30px;
+                color: black;
+            }
+  
+            .row {
+              display: flex;
+              flex-wrap: wrap;
+              padding: 0 4px;
+            }
 
-  <BODY>
-    <HEADER>
-      <h2>Untitled</h2>
-      <p style="text-align:right; font-size:75%;">
-        <A HREF="map_view.html">Map View</A>
-        |   
-        <A HREF="submission_form.html">Submit Art</A>
-      </p>
-    </HEADER>
+            .column {
+              flex: 25%;
+              max-width: 25%;
+              padding: 0 4px;
+            }
 
-    <div id = "placeholder"></div>
-    <script>
-    //populates the website with placeholders for pics 
-    for(i=0;i<10;i++)
-    {
-      var x = document.createElement("div");
-      // x.style.backgroundColor = "grey";
-      var pic = document.createElement("img");
-			pic.src = "../images/image.jpg";
-      x.appendChild(pic);
-      x.innerHTML = "placeholder" + (i+1);
-      var bigdiv = document.getElementById("placeholder");
-      bigdiv.appendChild(x);
-    }
-    // var x = document.createElement("div");
-    // var pic = document.createElement("img");
-    // pic.src = "../images/image.jpg";
-    // x.appendChild(pic);
-    // var bigdiv = document.getElementById("placeholder");
-    // bigdiv.appendChild(x);
+            .column img {
+              margin-top: 8px;
+              vertical-align: middle;
+              width: 100%;
+            }
 
-    </script>
-  </BODY>
+            @media screen and (max-width: 800px) {
+              .column {
+                flex: 50%;
+                max-width: 50%;
+              }
+            }
 
+            @media screen and (max-width: 600px) {
+              .column {
+                flex: 100%;
+                max-width: 100%;
+              }
+            }
+
+        </STYLE>
+    </HEAD>
+    <BODY>
+        <HEADER>
+            <h2>Untitled</h2>
+            <p style="text-align:right; font-size:75%;">
+                <A HREF="map_view.html">Map View</A>
+                |   
+                <A HREF="submission_form.html">Submit Art</A>
+            </p>
+        </HEADER>
+
+        <div class="row"></div> 
+        <script src = "populatesPage.js"></script>
+    </BODY>
 </HTML>
