@@ -8,6 +8,9 @@ Fill out the form to upload an image. It will then redirect to a page to show a 
 
 Limit of 2MB images.
 
+/pull_data
+Longitude: 2, Latitude:5 for testing
+
 Example JSON Sent to webpage:
   {
     _id: 5dd438f8636ec24ce457ca93,
