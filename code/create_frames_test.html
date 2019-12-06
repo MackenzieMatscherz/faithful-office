@@ -10,7 +10,8 @@
     	<div id = "body">
     	</div>
     	<script>
-			var frame = document.createElement("div");
+    		var object = {"title":"untitled", "artist":"unknown", "uploader":"none"};
+    		var frame = document.createElement("div");
 			//var picture = document.createElement("img");
 
 			var text = document.createElement("div");
@@ -56,9 +57,9 @@
 			uploaderLabel.textContent = "Uploader";
 			artistLabel.textContent = "Artist";
 
-			title.textContent = "Untitled";
-			artist.textContent = "Unknown";
-			uploader.textContent = "None";
+			title.textContent = object.title;
+			artist.textContent = object.artist;
+			uploader.textContent = object.uploader;
 			//picture.src = results[i].picture.data;
 			//picture.alt = results[i].title;
     	</script>
