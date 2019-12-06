@@ -1,0 +1,29 @@
+header {
+     /* background-image: linear-gradient(90deg, #9AC991, #85DE73,#4CAF38,#269911,#89B281); */
+     background-color: #88B04B;
+     padding: 1px;
+     text-align: left;
+     font-size: 30px;
+     color: black;
+}
+
+
+.button{
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border: 0.1em solid rgb(0, 0, 0);
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Helvetica;
+    font-weight: 300;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.button:hover{
+    color: #000000;
+    background-color: #FFFFFF;
+}
