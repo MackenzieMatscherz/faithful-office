@@ -13,60 +13,61 @@
     	<script>
 			$.get("/pull_data",longitude=2, latitude=5).done(function(imageArray){
 				
-				var object = imageArray[0];
-				console.log(object);
-				//var object = {"title":"untitled", "artist":"unknown", "uploader":"none"};
-				var frame = document.createElement("div");
-				var picture = document.createElement("img");
+				/*var object = imageArray[0];
+				console.log(object);*/
+				for (i = 0; i < imageArray.length; i++){
+					var frame = document.createElement("div");
+					var picture = document.createElement("img");
 
-				var text = document.createElement("div");
+					var text = document.createElement("div");
 
-				var titleDiv = document.createElement("div");
-				var titleLabel = document.createElement("label");
-				var title = document.createElement("p");
+					var titleDiv = document.createElement("div");
+					var titleLabel = document.createElement("label");
+					var title = document.createElement("p");
 
-				var artistDiv = document.createElement("div");
-				var artistLabel = document.createElement("label");
-				var artist = document.createElement("p");
+					var artistDiv = document.createElement("div");
+					var artistLabel = document.createElement("label");
+					var artist = document.createElement("p");
 
-				var uploaderDiv = document.createElement("div");
-				var uploaderLabel = document.createElement("label");
-				var uploader = document.createElement("p");
+					var uploaderDiv = document.createElement("div");
+					var uploaderLabel = document.createElement("label");
+					var uploader = document.createElement("p");
 
-				frame.appendChild(picture);
-				frame.appendChild(text);
+					frame.appendChild(picture);
+					frame.appendChild(text);
 
-				text.appendChild(titleDiv);
-				text.appendChild(artistDiv);
-				text.appendChild(uploaderDiv);
+					text.appendChild(titleDiv);
+					text.appendChild(artistDiv);
+					text.appendChild(uploaderDiv);
 
-				titleDiv.appendChild(titleLabel);
-				titleDiv.appendChild(title);
+					titleDiv.appendChild(titleLabel);
+					titleDiv.appendChild(title);
 
-				artistDiv.appendChild(artistLabel);
-				artistDiv.appendChild(artist);
+					artistDiv.appendChild(artistLabel);
+					artistDiv.appendChild(artist);
 
-				uploaderDiv.appendChild(uploaderLabel);
-				uploaderDiv.appendChild(uploader);
+					uploaderDiv.appendChild(uploaderLabel);
+					uploaderDiv.appendChild(uploader);
 
-				document.body.appendChild(frame);
+					document.body.appendChild(frame);
 
-				frame.classList.add("frame");
-				picture.classList.add("picture");
-				text.classList.add("textbox");
-				titleDiv.classList.add("field");
-				artistDiv.classList.add("field");
-				uploaderDiv.classList.add("field");
+					frame.classList.add("frame");
+					picture.classList.add("picture");
+					text.classList.add("textbox");
+					titleDiv.classList.add("field");
+					artistDiv.classList.add("field");
+					uploaderDiv.classList.add("field");
 
-				titleLabel.textContent = "Title";
-				uploaderLabel.textContent = "Uploader";
-				artistLabel.textContent = "Artist";
+					titleLabel.textContent = "Title";
+					uploaderLabel.textContent = "Uploader";
+					artistLabel.textContent = "Artist";
 
-				title.textContent = object.title;
-				artist.textContent = object.artist;
-				uploader.textContent = object.uploader;
-				picture.src = "data:" + object.picture.contentType + ";base64, " + object.picture.data;
-				picture.alt = "Alt";
+					title.textContent = imageArray[i].Title
+					artist.textContent = imageArray[i].artist;
+					uploader.textContent = imageArray[i].uploader;
+					picture.src = "data:" + imageArray[i].picture.contentType + ";base64, " + imageArray[i].picture.data;
+					picture.alt = "Alt";
+				}	
 			});
     	</script>
     </body>
