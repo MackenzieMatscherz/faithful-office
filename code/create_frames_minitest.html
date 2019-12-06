@@ -2,18 +2,16 @@
 
 <html>
 	<head>
-    	<title>Frames Test</title>
+    	<title>Frames Mini-Test</title>
     	<meta name="viewport" content="initial-scale=1.0">
     	<meta charset="utf-8">
     </head>
     <body>
-    	<div id = "body">
-    	</div>
     	<script>
-			var frame = document.createElement("div");
-			//var picture = document.createElement("img");
-
+    		var frame = document.createElement("div");
 			var text = document.createElement("div");
+
+
 
 			var titleDiv = document.createElement("div");
 			var titleLabel = document.createElement("label");
@@ -27,7 +25,6 @@
 			var uploaderLabel = document.createElement("label");
 			var uploader = document.createElement("p");
 
-			//frame.appendChild(picture);
 			frame.appendChild(text);
 
 			text.appendChild(titleDiv);
@@ -45,12 +42,12 @@
 
 			document.body.appendChild(frame);
 
-			frame.classList.add("frame");
-			//picture.classList.add("picture");
+			/*frame.classList.add("frame");
+			picture.classList.add("picture");
 			text.classList.add("textbox");
 			titleDiv.classList.add("field");
 			artistDiv.classList.add("field");
-			uploaderDiv.classList.add("field");
+			uploaderDiv.classList.add("field");*/
 
 			titleLabel.textContent = "Title";
 			uploaderLabel.textContent = "Uploader";
@@ -59,8 +56,25 @@
 			title.textContent = "Untitled";
 			artist.textContent = "Unknown";
 			uploader.textContent = "None";
-			//picture.src = results[i].picture.data;
-			//picture.alt = results[i].title;
+
+    		/*this works
+    		var frame = document.createElement("div");
+    		var text = document.createElement("div");
+    		frame.appendChild(text);
+
+    		var titleDiv = document.createElement("div");
+			var titleLabel = document.createElement("label");
+			var title = document.createElement("p");
+			titleDiv.appendChild(titleLabel);
+			titleDiv.appendChild(title);
+
+			text.appendChild(titleDiv);
+
+			titleLabel.textContent = "Title";
+			title.textContent = "Untitled";
+
+			document.body.appendChild(frame);*/
+
     	</script>
     </body>
 </html>
