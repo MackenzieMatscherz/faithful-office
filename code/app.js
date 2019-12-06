@@ -83,7 +83,7 @@ app.get(('/pull_data'), function(req, res){                                     
                 "$lte": [Math.sqrt(Math.pow((curr_longitude - "$location.0"),2) + Math.pow((curr_latitude - "$location.1"),2)), 1 ]
                 //"$lte": [] 
             } } }
-          ])
+          ]).limit(15);
             //TODO: Create proper Great Circle distance calculation - Currently finds absolute long/lat number <= 1
             //d=2*asin(sqrt((sin((lat1-lat2)/2))^2 + cos(lat1)*cos(lat2)*(sin((lon1-lon2)/2))^2))
         //console.log(images);
