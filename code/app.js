@@ -79,17 +79,24 @@ app.get(('/pull_data'), function(req, res){                                     
         }
         //console.log("Finding Image");
         const images = await Image.aggregate([
-            { "$match": { "$expr": { "$lte": [Math.sqrt(Math.pow((curr_longitude - "$location.0"),2) + Math.pow((curr_latitude - "$location.1"),2)), 1 ] } } }
+            { "$match": { "$expr": { 
+                "$lte": [Math.sqrt(Math.pow((curr_longitude - "$location.0"),2) + Math.pow((curr_latitude - "$location.1"),2)), 1 ]
+                //"$lte": [] 
+            } } }
           ])
             //TODO: Create proper Great Circle distance calculation - Currently finds absolute long/lat number <= 1
             //d=2*asin(sqrt((sin((lat1-lat2)/2))^2 + cos(lat1)*cos(lat2)*(sin((lon1-lon2)/2))^2))
-        console.log(images);
+        //console.log(images);
         res.json(images);
     });
 });
   
 app.get('/grid_view', function(req, res){                                               //Grid View page
     res.sendFile(path.join(__dirname+'/HTML/grid_view.html'));
+});
+
+app.get('/frame_test', function(req, res){                                               
+    res.sendFile(path.join(__dirname+'/create_frames_test.html'));
 });
   
 console.log("server listening at port 3000"); 
