@@ -4,6 +4,7 @@
   <HEAD>
     <TITLE>Untitled | Submission Form</TITLE>
     <STYLE>
+      <LINK HREF="submission_form.css" REL="stylesheet">
       *{box-sizing: border-box;}
       header {
         background-color: #208D20;
@@ -19,8 +20,31 @@
   <BODY>
     <HEADER>
       <h2>Untitled</h2>
+      <p style="text-align:right; font-size:75%;">
+        <A HREF="/">Map View</A>
+        |   
+        <A HREF="/grid_view">Grid View</A>
+      </p>
     </HEADER>
+<form> 
+  <div>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="usersname">
+  </div>
+
+  <div>
+    <label for="artist">Artist</label>
+    <input type="text" id="artist" name="artistname">
+  </div>
+
+  <div>
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title">
+  </div>
+</form>
+
     <input type="file" accept="image/*" id="user_image">
+    <input type="submit" value="Submit">
     <div id = "display_img">placeholder</div>
     <script>
       const input = document.getElementById("user_image")
