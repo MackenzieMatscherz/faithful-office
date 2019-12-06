@@ -4,7 +4,7 @@
   <HEAD>
     <TITLE>Untitled | Submission Form</TITLE>
     <STYLE>
-      <LINK HREF="submission_form.css" REL="stylesheet">
+      /* <LINK HREF="submission_form.css" REL="stylesheet"> */
       *{box-sizing: border-box;}
       header {
         background-color: #208D20;
@@ -26,6 +26,8 @@
         <A HREF="grid_view.html">Grid View</A>
       </p>
     </HEADER>
+
+    
 <form> 
   <div>
       <label for="name">Name</label>
@@ -43,26 +45,13 @@
   </div>
 </form>
 
+
     <input type="file" accept="image/*" id="user_image">
     <input type="submit" value="Submit">
+
     <div id = "display_img">placeholder</div>
-    <script>
-      const input = document.getElementById("user_image")
-      // input.addEventListener('change', (e) => doSomethingWithFiles(e.target.files));
-      // var box = document.getElementById("display_img")
 
-      // function doSomethingWithFiles(file){
-      //   box.appendChild(file[0])
-      // }
-      var t = document.createTextNode("Hello World");
-        function f(){
-          var box = document.getElementById("display_img")
-          var file = input.files[0];
-          box.appendChild(t)
-        }
-        input.addEventListener('change',f);
-
-    </script>
+    <script src = "submission.js"></script>
   </BODY>
 
 </HTML>
