@@ -1,4 +1,4 @@
-var results = JSON.parse(query);
+//var results = JSON.parse(query);
 
 for (var i = 0; i < results.length; i++) {
 	var frame = document.createElement("div");
