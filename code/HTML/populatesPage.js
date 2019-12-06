@@ -12,6 +12,8 @@ for(var j = 0;j<4;j++)
         if(i==1) src= "../images/photo-tall.jpg"
         var pic = createImage(src)
         colHolder.appendChild(pic)
+        var text = document.createTextNode("test message")
+        colHolder.appendChild(text)
     }
     var a = document.getElementsByClassName("row")
     a[0].appendChild(colHolder)
@@ -24,7 +26,6 @@ function createImage(src){
     pic.src = src
     pic.classList.add("image")
     pic.style.zIndex = -1;
-
 
 
     //interactivity
