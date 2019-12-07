@@ -36,6 +36,22 @@ function initMap() {
     });
 }
 
+function getPosition(){
+    return navigator.geolocation.getCurrentPosition(query);
+}
+
+//STILL NEEDS TO BE DONE
+function query(position) {
+    //add degree of 1 for roughly 70 miles
+    var lat = position.coords.latitude;
+    var long = position.coords.longitude;
+    var databaseArray;
+    for (i = 0; i < databaseArray.length; i++){
+        var frame = createFrame(databaseArray[i]);
+        createInfoWindow(frame);
+
+    }
+}
 
 function dropMarker(position,map,image,message){
     var marker = new google.maps.Marker({position:position, map:map});
@@ -46,18 +62,67 @@ function dropMarker(position,map,image,message){
 
 
 
-function createInfoWindow(image,message)
+function createInfoWindow(frame)
 {
     var infocontent = document.createElement("div");    //puts infocontent in infowindow
-    var list = document.createElement('ul');
-    var item1 = document.createElement('li');
-    item1.textContent = message;
-    list.appendChild(item1);
-    list.classList.add("list")
-
-    infocontent.appendChild(image)
-    infocontent.appendChild(list)
+    infocontent.appendChild(frame);
     var infoWindow = new google.maps.InfoWindow;
-    infoWindow.setContent(infocontent)
+    infoWindow.setContent(infocontent);
     return infoWindow;
+}
+
+function createFrame(databaseObject)
+{
+    var frame = document.createElement("div");
+    var picture = document.createElement("img");
+
+    var text = document.createElement("div");
+
+    var titleDiv = document.createElement("div");
+    var titleLabel = document.createElement("label");
+    var title = document.createElement("p");
+
+    var artistDiv = document.createElement("div");
+    var artistLabel = document.createElement("label");
+    var artist = document.createElement("p");
+
+    var uploaderDiv = document.createElement("div");
+    var uploaderLabel = document.createElement("label");
+    var uploader = document.createElement("p");
+
+    frame.appendChild(picture);
+    frame.appendChild(text);
+
+    text.appendChild(titleDiv);
+    text.appendChild(artistDiv);
+    text.appendChild(uploaderDiv);
+
+    titleDiv.appendChild(titleLabel);
+    titleDiv.appendChild(title);
+
+    artistDiv.appendChild(artistLabel);
+    artistDiv.appendChild(artist);
+
+    uploaderDiv.appendChild(uploaderLabel);
+    uploaderDiv.appendChild(uploader);
+
+    document.body.appendChild(frame);
+
+    frame.classList.add("frame");
+    picture.classList.add("picture");
+    text.classList.add("textbox");
+    titleDiv.classList.add("field");
+    artistDiv.classList.add("field");
+    uploaderDiv.classList.add("field");
+
+    titleLabel.textContent = "Title";
+    uploaderLabel.textContent = "Uploader";
+    artistLabel.textContent = "Artist";
+
+    title.textContent = databaseObject.Title
+    artist.textContent = databaseObject.artist;
+    uploader.textContent = databaseObject.uploader;
+    picture.src = "data:" + databaseObject.picture.contentType + ";base64, " + databaseObject.picture.data;
+    picture.alt = "Alt";
+    return frame;
 }

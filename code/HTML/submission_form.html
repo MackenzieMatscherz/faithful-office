@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 
 <HTML>
-  <HEAD>
-    <TITLE>Untitled | Submission Form</TITLE>
-    <STYLE>
-      /* <LINK HREF="submission_form.css" REL="stylesheet"> */
-      *{box-sizing: border-box;}
-      header {
-        background-color: #208D20;
-        padding: 1px;
-        text-align: left;
-        font-size: 30px;
-        color: black;
-      }
+    <HEAD>
+      <TITLE>Untitled | Submission Form</TITLE>
+      <link href="general_css.css" rel="stylesheet">
+      <STYLE>
+          
+          *{box-sizing: border-box;}
+          HEADER {
+             /* background-image: linear-gradient(90deg, #9AC991, #85DE73,#4CAF38,#269911,#89B281); */
+             background-color: #88B04B;
+             padding: 1px;
+             text-align: left;
+             font-size: 30px;
+             color: black;
+          } 
+
+
     </STYLE>
 
   </HEAD>
@@ -26,8 +30,6 @@
         <A HREF="grid_view.html">Grid View</A>
       </p>
     </HEADER>
-
-    
 <form> 
   <div>
       <label for="name">Name</label>
@@ -45,13 +47,26 @@
   </div>
 </form>
 
-
     <input type="file" accept="image/*" id="user_image">
     <input type="submit" value="Submit">
-
     <div id = "display_img">placeholder</div>
+    <script>
+      const input = document.getElementById("user_image")
+      // input.addEventListener('change', (e) => doSomethingWithFiles(e.target.files));
+      // var box = document.getElementById("display_img")
 
-    <script src = "submission.js"></script>
+      // function doSomethingWithFiles(file){
+      //   box.appendChild(file[0])
+      // }
+      var t = document.createTextNode("Hello World");
+        function f(){
+          var box = document.getElementById("display_img")
+          var file = input.files[0];
+          box.appendChild(t)
+        }
+        input.addEventListener('change',f);
+
+    </script>
   </BODY>
 
 </HTML>
