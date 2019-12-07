@@ -12,14 +12,12 @@
 var x = document.getElementById("loc");
 
 function getLocation(){
-    var pos =  navigator.geolocation.getCurrentPosition(showPosition);
-    x.innerHTML = "latitude: " + pos.coords.latitude + "<br>Longitude: " + pos.coords.longitude;
+    navigator.geolocation.getCurrentPosition(showPosition);
 }
 
-var pos = getLocation();
-
 function showPosition(postion){
-    x.innerHTML = "latitude: " + pos.coords.latitude + "<br>Longitude: " + pos.coords.longitude;
+    x.innerHTML = "latitude: " + postion.coords.latitude + "<br>Longitude: " + postion.coords.longitude;
+    alert("hi")
 }
 </script>
 

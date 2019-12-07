@@ -1,19 +1,40 @@
 var map;
-
 //get position
 //local cache 
 
-function initMap() {
-    /*
-    Maps initialized to UMass Amherst with latlng(42.391155,-72.526711)
-    */
-    var campus = {lat: 42.3896166, lng: -72.52946829999999};
+function getLoc(){
+    navigator.geolocation.getCurrentPosition(initMap);
+}
 
+
+function initMap(position) {
+    var lat = position.coords.latitude
+    var lng = position.coords.longitude
+    var pos = {lat,lng}
+    var iconBase ='http://maps.google.com/mapfiles/kml/shapes';
+    var icons = {
+        pic: {
+          icon: 'http://maps.google.com/mapfiles/kml/shapes/square.png'
+        },
+        user: {
+          icon: 'http://maps.google.com/mapfiles/kml/shapes/man.png'
+        },
+      };
+
+    // var campus = {lat: 42.3896166, lng: -72.52946829999999};
     map = new google.maps.Map(document.getElementById('map'), {
-        center: campus, 
+        center: pos, 
         zoom: 13
     });
-    var marker = new google.maps.Marker({position:campus, map:map});
+    var marker = new google.maps.Marker({
+        position:pos, 
+        map:map,
+        icon:icons['user'].icon
+    });
+
+
+    
+
 
 //create test image
     var pic = document.createElement("img");
@@ -23,9 +44,9 @@ function initMap() {
 
     marker.addListener('mouseover',function(){
         //infoWindow.setContent(infocontent);
-        // var info = createInfoWindow(pic,"hello, world")
-        // info.open(map,marker);
-        var marker = dropMarker(campus,map,pic,"hello, world")
+        var info = createInfoWindow(pic,"hello, world")
+        info.open(map,marker);
+        // var marker = dropMarker(campus,map,pic,"hello, world")
         marker.addListener('mouseout',function(){
             info.close();
         });
@@ -36,9 +57,7 @@ function initMap() {
     });
 }
 
-function getPosition(){
-    return navigator.geolocation.getCurrentPosition(query);
-}
+
 
 //STILL NEEDS TO BE DONE
 function query(position) {
