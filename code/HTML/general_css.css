@@ -7,11 +7,6 @@ HEADER {
      color: black;
 }
 
-* {
-    box-sizing: border-box;
-    font-family: Helvetica;
-}
-
 
 .button{
     display:inline-block;
