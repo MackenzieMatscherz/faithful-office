@@ -1,4 +1,8 @@
 var map;
+
+//get position
+//local cache 
+
 function initMap() {
     /*
     Maps initialized to UMass Amherst with latlng(42.391155,-72.526711)
