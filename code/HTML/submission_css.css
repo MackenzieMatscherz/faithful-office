@@ -1,0 +1,40 @@
+body{
+    background-color: WhiteSmoke;
+}
+
+form{
+    font: Helvetica;
+    padding: 10px;
+}
+
+label{
+    width: 50px;
+    display: inline-block;
+    text-align: right;
+    margin-right: 8px;
+}
+
+input[type=text], select{
+    width: 350px;
+    padding: 10px;
+    margin: 6px 0;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+}
+
+input[type=submit]:hover {
+    background-color: #88B04B;
+}
+
+input[type=file]:hover {
+    background-color: #88B04B;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
