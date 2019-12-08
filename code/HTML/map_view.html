@@ -6,7 +6,7 @@
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <LINK HREF="general_css.css" REL="stylesheet">
-    <LINK HREF="map_css.css" REL="stylesheet">
+    <LINK HREF="..\CSS\maps_css.css" REL="stylesheet">
 
     <STYLE>
         #map {
@@ -44,10 +44,13 @@
                 <!-- <button onclick = "window.location.href = 'submission_form.html';" class = "button">Map View</button> -->
                 <A HREF="/submission_form" class = "button">Submit Art</A>
       </p>
+
     </HEADER>
     
-    <body id="map" onload="getLoc()"></body>
-		
+    <!-- <body id="map" onload="getLoc()"></body> -->
+    <body id="map"></body>
+
+    
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     	<script src = "maps.js"></script>
     	<script async defer
