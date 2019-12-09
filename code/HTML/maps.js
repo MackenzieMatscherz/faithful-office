@@ -16,7 +16,8 @@ function initMap() {
       };
 
     var marker;
-    navigator.geolocation.getCurrentPosition(function(position) {
+    getPosition();
+    /*navigator.geolocation.getCurrentPosition(function(position) {
         var pos = {
             lat: position.coords.latitude,
             lng: position.coords.longitude
@@ -29,10 +30,12 @@ function initMap() {
             map:map,
             icon:icons['user'].icon
         });
-    })
+    })*/
 }
 
-
+function getPosition(){
+    navigator.geolocation.getCurrentPosition(query);
+}
 
 function restofInitmap(){
     //create test image
@@ -76,6 +79,15 @@ function createInfoWindow(frame)
 
 //DONE
 function query(position) {
+    map.setCenter(pos)
+    map.setZoom(12);
+
+    marker = new google.maps.Marker({
+        position:pos, 
+        map:map,
+        icon:icons['user'].icon
+    });
+
     var lat = position.coords.latitude;
     var long = position.coords.longitude;
     $.get("/pull_data",longitude=long, latitude=lat).done(function(databaseArray){
