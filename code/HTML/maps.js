@@ -33,9 +33,6 @@ function initMap() {
             icon:icons['user'].icon
         });
     })
-
-
-
 }
 
 
