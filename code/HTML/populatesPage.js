@@ -34,6 +34,7 @@ function query(position) {
     $.get("/pull_data",longitude=long, latitude=lat).done(function(databaseArray){
         for (i = 0; i < databaseArray.length; i++){
             var frame = createFrame(databaseArray[i]);
+            console.log(frame);
             createInfoWindow(frame);
         }
     });
