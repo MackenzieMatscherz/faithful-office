@@ -77,7 +77,7 @@ function createInfoWindow(frame)
 
 
 
-//STILL NEEDS TO BE DONE
+//DONE
 function query(position) {
     var lat = position.coords.latitude;
     var long = position.coords.longitude;
