@@ -2,15 +2,12 @@ var map;
 //get position
 //local cache 
 
-function getLoc(){
-    navigator.geolocation.getCurrentPosition(initMap);
-}
-
-
-function initMap(position) {
-    var lat = position.coords.latitude
-    var lng = position.coords.longitude
-    var pos = {lat,lng}
+function initMap() {
+    // var campus = {lat: 42.3896166, lng: -72.52946829999999};
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 41.186355,lng:-102.175498}, 
+        zoom: 4.5
+    });
     var iconBase ='http://maps.google.com/mapfiles/kml/shapes';
     var icons = {
         pic: {
@@ -21,32 +18,38 @@ function initMap(position) {
         },
       };
 
-    // var campus = {lat: 42.3896166, lng: -72.52946829999999};
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: pos, 
-        zoom: 13
-    });
-    var marker = new google.maps.Marker({
-        position:pos, 
-        map:map,
-        icon:icons['user'].icon
-    });
+    var marker;
+    navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+        };
+        map.setCenter(pos)
+        map.setZoom(12);
+
+        marker = new google.maps.Marker({
+            position:pos, 
+            map:map,
+            icon:icons['user'].icon
+        });
+    })
 
 
-    
+
+}
 
 
-//create test image
+
+function restofInitmap(){
+    //create test image
     var pic = document.createElement("img");
     pic.src = "../images/image.jpg";
     pic.classList.add('pics')
 
 
     marker.addListener('mouseover',function(){
-        //infoWindow.setContent(infocontent);
         var info = createInfoWindow(pic,"hello, world")
         info.open(map,marker);
-        // var marker = dropMarker(campus,map,pic,"hello, world")
         marker.addListener('mouseout',function(){
             info.close();
         });
@@ -55,7 +58,25 @@ function initMap(position) {
     marker.addListener('click',function(){
         window.open( "../images/image.jpg", "_blank"); 
     });
+
 }
+
+function dropMarker(position,map,image,message){
+    var marker = new google.maps.Marker({position:position, map:map});
+    var info = createInfoWindow(image,message);
+    info.open(map,marker);
+    return marker;
+}
+
+function createInfoWindow(frame)
+{
+    var infocontent = document.createElement("div");    //puts infocontent in infowindow
+    infocontent.appendChild(frame);
+    var infoWindow = new google.maps.InfoWindow;
+    infoWindow.setContent(infocontent);
+    return infoWindow;
+}
+
 
 
 
@@ -72,23 +93,6 @@ function query(position) {
     }
 }
 
-function dropMarker(position,map,image,message){
-    var marker = new google.maps.Marker({position:position, map:map});
-    var info = createInfoWindow(image,message);
-    info.open(map,marker);
-    return marker;
-}
-
-
-
-function createInfoWindow(frame)
-{
-    var infocontent = document.createElement("div");    //puts infocontent in infowindow
-    infocontent.appendChild(frame);
-    var infoWindow = new google.maps.InfoWindow;
-    infoWindow.setContent(infocontent);
-    return infoWindow;
-}
 
 function createFrame(databaseObject)
 {

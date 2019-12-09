@@ -82,7 +82,7 @@ app.get(('/pull_data'), function(req, res){                                     
         const images = await Image.aggregate([
             { "$match": { "$expr": { 
                 "$lte": [Math.sqrt(Math.pow((curr_longitude - "$location.0"),2) + Math.pow((curr_latitude - "$location.1"),2)), 1 ]
-                //"$lte": [2*Math.pow(Math.asin(Math.sqrt(Math.sin((curr_latitude-"$location.0")/2)),2)) + Math.cos(curr_latitude)*Math.cos("$location.0")*Math.pow(Math.sin((curr_longitude-"#location.1")/2),2)] 
+                //"$lte": [2*Math.pow(Math.asin(Math.sqrt(Math.sin((curr_latitude-"$location.0")/2)),2)) + Math.cos(curr_latitude)*Math.cos("$location.0")*Math.pow(Math.sin((curr_longitude-"#location.1")/2),2), 50] 
             } } }
           ]).limit(15);
             //TODO: Create proper Great Circle distance calculation - Currently finds absolute long/lat number <= 1
