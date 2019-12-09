@@ -74,17 +74,16 @@ function createInfoWindow(frame)
 
 
 
-//STILL NEEDS TO BE DONE
+//DONE
 function query(position) {
-    //add degree of 1 for roughly 70 miles
     var lat = position.coords.latitude;
     var long = position.coords.longitude;
-    var databaseArray;
-    for (i = 0; i < databaseArray.length; i++){
-        var frame = createFrame(databaseArray[i]);
-        createInfoWindow(frame);
-
-    }
+    $.get("/pull_data",longitude=long, latitude=lat).done(function(databaseArray){
+        for (i = 0; i < databaseArray.length; i++){
+            var frame = createFrame(databaseArray[i]);
+            createInfoWindow(frame);
+        }
+    });
 }
 
 
