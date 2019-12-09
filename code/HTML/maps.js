@@ -1,7 +1,4 @@
 var map;
-//get position
-//local cache 
-
 function initMap() {
     // var campus = {lat: 42.3896166, lng: -72.52946829999999};
     map = new google.maps.Map(document.getElementById('map'), {
