@@ -11,6 +11,8 @@ const Image = mongoose.model('image', imageSchema, 'image')
 
 var app=express();
 app.use(express.static(__dirname));
+app.use(express.static(__dirname + '/HTML'));
+app.use(express.static(__dirname + '/CSS'));
 
   
 app.get('/',function(req,res){                                                          //The page that launches when opening site - Map View
