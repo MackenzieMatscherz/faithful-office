@@ -1,36 +1,36 @@
 var map;
 function initMap() {
-    /*
-    Maps initialized to UMass Amherst with latlng(42.391155,-72.526711)
-    */
-    var campus = {lat: 42.3896166, lng: -72.52946829999999};
-
+    // var campus = {lat: 42.3896166, lng: -72.52946829999999};
     map = new google.maps.Map(document.getElementById('map'), {
-        center: campus, 
-        zoom: 13
+        center: {lat: 41.186355,lng:-102.175498}, 
+        zoom: 4.5
     });
-    var marker = new google.maps.Marker({position:campus, map:map});
+    var iconBase ='http://maps.google.com/mapfiles/kml/shapes';
+    var icons = {
+        pic: {
+          icon: 'http://maps.google.com/mapfiles/kml/shapes/square.png'
+        },
+        user: {
+          icon: 'http://maps.google.com/mapfiles/kml/shapes/man.png'
+        },
+      };
 
-//create test image
-    var pic = document.createElement("img");
-    pic.src = "../images/image.jpg";
-    pic.classList.add('pics')
+    var marker;
+    navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+        };
+        map.setCenter(pos)
+        map.setZoom(12);
 
-
-    marker.addListener('mouseover',function(){
-        //infoWindow.setContent(infocontent);
-        var info = createInfoWindow(pic,"hello, world")
-        info.open(map,marker);
-        marker.addListener('mouseout',function(){
-            info.close();
+        marker = new google.maps.Marker({
+            position:pos, 
+            map:map,
+            icon:icons['user'].icon
         });
-    });
-    
-    marker.addListener('click',function(){
-        window.open( "../images/image.jpg", "_blank"); 
-    });
+    })
 }
-
 
 function createInfoWindow(image,message)
 {
