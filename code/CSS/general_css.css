@@ -22,7 +22,7 @@ HEADER {
     box-sizing: border-box;
     text-decoration: none;
     font-family: Helvetica;
-    font-weight: 300;
+    font-weight: 100;
     color: rgb(0, 0, 0);
     text-align: center;
     transition: all 0.2s;
