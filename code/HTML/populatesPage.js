@@ -17,6 +17,8 @@
     a[0].appendChild(colHolder)
 }*/
 
+getPosition();
+
 //need code that initializes page
 
 function getPosition(){
@@ -96,16 +98,16 @@ function createFrame(databaseObject)
         //window.open(src, "_blank"); 
     });
     frame.addEventListener('mouseover',function(){
-        pic.style.filter = "brightness(120%)";
-        pic.style.zIndex = 50;
-        pic.style.width = "102%";
+        frame.style.filter = "brightness(120%)";
+        frame.style.zIndex = 50;
+        frame.style.width = "102%";
     });
     frame.addEventListener('mouseout',function(){
-        pic.style.filter = "brightness(100%)";
-        pic.style.width = "100%";
-        pic.style.position = "relative";
+        frame.style.filter = "brightness(100%)";
+        frame.style.width = "100%";
+        frame.style.position = "relative";
 
-        pic.style.zIndex = 0;
+        frame.style.zIndex = 0;
     });
     return frame;
 }
