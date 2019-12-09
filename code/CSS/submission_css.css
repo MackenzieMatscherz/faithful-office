@@ -11,7 +11,7 @@ label{
     width: 50px;
     display: inline-block;
     text-align: right;
-    margin-right: 8px;
+    margin-right: 20px;
 }
 
 input[type=text], select{
