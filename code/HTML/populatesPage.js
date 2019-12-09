@@ -1,4 +1,4 @@
-for(var j = 0;j<4;j++)
+/*for(var j = 0;j<4;j++)
 {
     var colHolder = document.createElement("div")
     colHolder.classList.add("column")
@@ -17,9 +17,102 @@ for(var j = 0;j<4;j++)
     }
     var a = document.getElementsByClassName("row")
     a[0].appendChild(colHolder)
+}*/
+
+getPosition();
+
+//need code that initializes page
+
+function getPosition(){
+    return navigator.geolocation.getCurrentPosition(query);
 }
 
+//STILL NEEDS TO BE DONE
+function query(position) {
+    //add degree of 1 for roughly 70 miles
+    var lat = position.coords.latitude;
+    var long = position.coords.longitude;
+    var databaseArray;
+    for (i = 0; i < databaseArray.length; i++){
+        var frame = createFrame(databaseArray[i]);
+        createInfoWindow(frame);
 
+    }
+}
+
+function createFrame(databaseObject)
+{
+    var frame = document.createElement("div");
+    var picture = document.createElement("img");
+
+    var text = document.createElement("div");
+
+    var titleDiv = document.createElement("div");
+    var titleLabel = document.createElement("label");
+    var title = document.createElement("p");
+
+    var artistDiv = document.createElement("div");
+    var artistLabel = document.createElement("label");
+    var artist = document.createElement("p");
+
+    var uploaderDiv = document.createElement("div");
+    var uploaderLabel = document.createElement("label");
+    var uploader = document.createElement("p");
+
+    frame.appendChild(picture);
+    frame.appendChild(text);
+
+    text.appendChild(titleDiv);
+    text.appendChild(artistDiv);
+    text.appendChild(uploaderDiv);
+
+    titleDiv.appendChild(titleLabel);
+    titleDiv.appendChild(title);
+
+    artistDiv.appendChild(artistLabel);
+    artistDiv.appendChild(artist);
+
+    uploaderDiv.appendChild(uploaderLabel);
+    uploaderDiv.appendChild(uploader);
+
+    document.body.appendChild(frame);
+
+    frame.classList.add("frame");
+    picture.classList.add("picture");
+    text.classList.add("textbox");
+    titleDiv.classList.add("field");
+    artistDiv.classList.add("field");
+    uploaderDiv.classList.add("field");
+
+    titleLabel.textContent = "Title";
+    uploaderLabel.textContent = "Uploader";
+    artistLabel.textContent = "Artist";
+
+    title.textContent = databaseObject.Title
+    artist.textContent = databaseObject.artist;
+    uploader.textContent = databaseObject.uploader;
+    picture.src = "data:" + databaseObject.picture.contentType + ";base64, " + databaseObject.picture.data;
+    picture.alt = "Alt";
+
+    //interactivity copied from createImage
+    frame.addEventListener('click',function(){
+        //this needs to be changed
+        //window.open(src, "_blank"); 
+    });
+    frame.addEventListener('mouseover',function(){
+        frame.style.filter = "brightness(120%)";
+        frame.style.zIndex = 50;
+        frame.style.width = "102%";
+    });
+    frame.addEventListener('mouseout',function(){
+        frame.style.filter = "brightness(100%)";
+        frame.style.width = "100%";
+        frame.style.position = "relative";
+
+        frame.style.zIndex = 0;
+    });
+    return frame;
+}
 
 function createImage(src){
     var pic = document.createElement("img")

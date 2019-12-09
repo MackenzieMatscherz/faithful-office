@@ -86,5 +86,61 @@
         </script>
         
     </BODY>
+  <HEAD>
+    <TITLE>Untitled | Submission Form</TITLE>
+    <STYLE>
+      *{box-sizing: border-box;}
+      header {
+        background-color: #208D20;
+        padding: 1px;
+        text-align: left;
+        font-size: 30px;
+        color: black;
+      }
+    </STYLE>
+
+  </HEAD>
+
+  <BODY>
+    <HEADER>
+      <h2>Untitled</h2>
+    </HEADER>
+<form> 
+
+  <div>
+    <label for="artist">Artist</label>
+    <input type="text" id="artist" name="artistname">
+  </div>
+
+  <div>
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title">
+  </div>
+  <div>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="usersname">
+  </div>
+</form>
+
+    <input type="file" accept="image/*" id="user_image">
+    <div id = "display_img">placeholder</div>
+    <script>
+      const input = document.getElementById("user_image")
+      // input.addEventListener('change', (e) => doSomethingWithFiles(e.target.files));
+      // var box = document.getElementById("display_img")
+
+      // function doSomethingWithFiles(file){
+      //   box.appendChild(file[0])
+      // }
+      var t = document.createTextNode("Hello World");
+        function f(){
+          var box = document.getElementById("display_img")
+          var file = input.files[0];
+          box.appendChild(t)
+        }
+        input.addEventListener('change',f);
+
+    </script>
+  </BODY>
 
 </HTML>
