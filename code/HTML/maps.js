@@ -5,15 +5,7 @@ function initMap() {
         center: {lat: 41.186355,lng:-102.175498}, 
         zoom: 4.5
     });
-    var iconBase ='http://maps.google.com/mapfiles/kml/shapes';
-    var icons = {
-        pic: {
-          icon: 'http://maps.google.com/mapfiles/kml/shapes/square.png'
-        },
-        user: {
-          icon: 'http://maps.google.com/mapfiles/kml/shapes/man.png'
-        },
-      };
+   
 
     var marker;
     getPosition();
@@ -82,7 +74,16 @@ function query(position) {
     var long = position.coords.longitude;
     var lat = position.coords.latitude;
     var pos = {lat:lat, lng:long};
-
+    var iconBase ='http://maps.google.com/mapfiles/kml/shapes';
+    var icons = {
+        pic: {
+          icon: 'http://maps.google.com/mapfiles/kml/shapes/square.png'
+        },
+        user: {
+          icon: 'http://maps.google.com/mapfiles/kml/shapes/man.png'
+        },
+      };
+      
     map.setCenter(pos)
     map.setZoom(12);
 
