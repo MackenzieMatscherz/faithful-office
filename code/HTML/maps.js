@@ -97,7 +97,6 @@ function query(position) {
         icon:icons['user'].icon
     });
 
-    var markerArray = []
     $.get("/pull_data",longitude=long, latitude=lat).done(function(databaseArray){
         var img_marker;
         for (var i = 0; i < databaseArray.length; i++){
