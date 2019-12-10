@@ -7,7 +7,7 @@ html, body {
 
 .frame {
 	width: 20vw;
-    background-color: WhiteSmoke;
+        backgroud-color: WhiteSmoke;
 }
 
 .gm-style img {
@@ -21,4 +21,5 @@ p{
 label{
     color: #88B04B
     backgroud-color: WhiteSmoke;
+    text-decoration: bold;
 }
