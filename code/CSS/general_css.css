@@ -7,6 +7,15 @@ HEADER {
     color: black;
 }
 
+h2{
+    position: absolute;
+    top: .4em;
+    left: .5em;
+    margin: 0;
+    float: left;
+    display: inline;
+    
+}
 * {
     box-sizing: border-box;
     font-family: Helvetica;
