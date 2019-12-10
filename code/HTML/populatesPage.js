@@ -103,21 +103,15 @@ function createFrame(databaseObject)
     picture.alt = "Alt";
 
     //interactivity copied from createImage
-    frame.addEventListener('click',function(){
+    /*frame.addEventListener('click',function(){
         //this needs to be changed
         //window.open(src, "_blank"); 
-    });
+    });*/
     frame.addEventListener('mouseover',function(){
         frame.style.filter = "brightness(120%)";
-        frame.style.zIndex = 50;
-        frame.style.width = "102%";
     });
     frame.addEventListener('mouseout',function(){
         frame.style.filter = "brightness(100%)";
-        frame.style.width = "100%";
-        frame.style.position = "relative";
-
-        frame.style.zIndex = 0;
     });
     return frame;
 }
