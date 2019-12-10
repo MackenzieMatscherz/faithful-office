@@ -98,28 +98,27 @@ function query(position) {
     });
 
     $.get("/pull_data",longitude=long, latitude=lat).done(function(databaseArray){
-        var img_marker;
+        // var img_marker = [databaseArray.length];
         for (var i = 0; i < databaseArray.length; i++){
             var frame = createFrame(databaseArray[i]);
             var window = createInfoWindow(frame);
             var img_pos = {lat:databaseArray[i].location[0],lng:databaseArray[i].location[1]}
             
-            img_marker = new google.maps.Marker({
-                position:img_pos,
-                map:map,
-                icon:icons['pic'].icon
-            })
-
-            img_marker.addListener('click',function(){
-                window.open(map,img_marker)
-            })
-
-
+            createMarker(img_pos, window);
         }
     });
 }
 
-
+function createMarker(pos, window) {
+    var marker = new google.maps.Marker({       
+        position: pos, 
+        map: map,  // google.maps.Map  
+    }); 
+    google.maps.event.addListener(marker, 'click', function() { 
+       window.open(map, marker);
+    }); 
+    return marker;  
+}
 
 function createFrame(databaseObject)
 {
