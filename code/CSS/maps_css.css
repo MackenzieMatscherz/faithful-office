@@ -5,9 +5,10 @@ html, body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
-    		}
-.picture{
-	max-width:25%;
+}
+
+.gm-style img {
+	max-width: 10%;
 }
 
 .textcontainer{
@@ -22,6 +23,6 @@ html, body {
 }
 #div{
 	display: inline-block;
-	float:left;
+	/* float:left; */
 	width: 50%;
 }
