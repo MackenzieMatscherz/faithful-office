@@ -6,12 +6,18 @@
     .frame{
     }
 }
-
 .gm-style img {
 	max-width: 25%;
 }
+
+.picture {
+	max-width: 100%;
+}
+
 .frame{
+	display: inline-block;
 	flex: 25%;
 	max-width: 25%;
 	padding: 0 4px;
+	float: left;
 }
