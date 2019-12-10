@@ -112,17 +112,16 @@ function query(position) {
 function createMarker(pos, window) {
     var marker = new google.maps.Marker({ 
         animation: google.maps.Animation.DROP,
-        scaledSize: new google.maps.Size(25, 25),
-        icon:icons['pic'].icon,
         position: pos, 
         map: map,  // google.maps.Map  
     }); 
     google.maps.event.addListener(marker, 'click', function() { 
        window.open(map, marker);
     }); 
-    // google.maps.event.addListener(marker, 'mouseout', function() { 
-    //     window.close();
-    //  }); 
+    google.maps.event.addListener(marker, 'mouseout', function() { 
+        window.close();
+    }); 
+
     return marker;  
 }
 
