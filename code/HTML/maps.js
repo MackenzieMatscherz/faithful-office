@@ -3,8 +3,12 @@ function initMap() {
     // var campus = {lat: 42.3896166, lng: -72.52946829999999};
     map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 41.186355,lng:-102.175498}, 
-        zoom: 4.5
+        zoom: 6
     });
+    $('#map').css("height",($(window).height()*.9));
+    $('#map').css("width",$(window).width());
+    google.maps.event.trigger(map, 'resize');
+    map.setZoom( map.getZoom() );
    
 
     var marker;
@@ -85,7 +89,7 @@ function query(position) {
       };
       
     map.setCenter(pos)
-    map.setZoom(12);
+    map.setZoom(16);
 
     marker = new google.maps.Marker({
         position:pos, 
@@ -103,25 +107,21 @@ function query(position) {
                 map:map,
                 icon:icons['pic'].icon
             })
-            markerArray.push([img_marker,window])
-            // google.maps.event.addListener(img_marker,'mouseover',function(){
-            //     window.open(map,img_marker)
-            // })
-            // google.maps.event.addListener(img_marker,'mouseout',function(){
-            //     window.close()
-            // })
-        }
-        for(var i = 0;i<markerArray.length;i++){
-            var m = markerArray[i][0]
-            var w = markerArray[i][1]
-            m.addListener('mouseover',function(){
-                w.open(map,m);
-            });
-            m.addListener('mouseout',function(){
-                w.close();
-            })
+
+            google.maps.event.addListener(img_marker,'click',placeMarker(map,window,img_pos))
+
         }
     });
+}
+
+function placeMarker(map,window,position){
+    var marker = new google.maps.Marker({
+        position:position,
+        map:map,
+        icon:icons['pic'].icon
+    })
+    window.open(map,marker)
+
 }
 
 
@@ -180,3 +180,10 @@ function createFrame(databaseObject)
     picture.alt = "Alt";
     return frame;
 }
+
+$(window).resize(function(){
+    $('#map').css("height",($(window).height()*.9));
+    $('#map').css("width",$(window).width());
+    google.maps.event.trigger(map, 'resize');
+    map.setZoom( map.getZoom() );
+});
