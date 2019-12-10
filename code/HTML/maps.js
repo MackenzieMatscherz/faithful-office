@@ -112,7 +112,7 @@ function query(position) {
 function createMarker(pos, window) {
     var marker = new google.maps.Marker({ 
         animation: google.maps.Animation.DROP,
-        scaledSize: new google.maps.Size(50, 50),
+        scaledSize: new google.maps.Size(25, 25),
         icon:icons['pic'].icon,
         position: pos, 
         map: map,  // google.maps.Map  
