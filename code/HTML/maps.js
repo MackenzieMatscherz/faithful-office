@@ -118,9 +118,9 @@ function createMarker(pos, window) {
     google.maps.event.addListener(marker, 'click', function() { 
        window.open(map, marker);
     }); 
-    google.maps.event.addListener(marker, 'mouseout', function() { 
-        window.close()
-     }); 
+    // google.maps.event.addListener(marker, 'mouseout', function() { 
+    //     window.close()
+    //  }); 
 
     return marker;  
 }
