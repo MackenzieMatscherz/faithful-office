@@ -8,6 +8,8 @@ Fill out the form to upload an image. It will then redirect to a page to show a 
 
 Limit of 2MB images.
 
+https://codepen.io/alexgill/pen/NqjMma
+
 /pull_data
 Longitude: 2, Latitude:5 for testing
 
