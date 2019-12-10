@@ -48,7 +48,7 @@ input[type=file]:hover {
     }
     
     input[type=text], select{
-        width: 150%;
+        width: 90vw;
         padding: 10px;
         margin: 6px 0;
         border: 1px solid #aaa;
@@ -56,7 +56,7 @@ input[type=file]:hover {
     }
     
     input[type=number], select{
-        width: 150%;
+        width: 90vw;
         padding: 10px;
         margin: 6px 0;
         border:1px solid #aaa;
