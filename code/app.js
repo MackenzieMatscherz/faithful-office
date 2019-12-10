@@ -16,9 +16,7 @@ app.use(express.static(__dirname + '/CSS'));
 
   
 app.get('/',function(req,res){                                                          //The page that launches when opening site - Map View
-    //res.sendFile(path.join(__dirname+'/HTML/map_view.html'));
-    //res.sendFile(path.join(__dirname+'/index.html'));
-    res.sendFile(path.join(__dirname+'/HTML/submission_form.html'));
+    res.sendFile(path.join(__dirname+'/HTML/map_view.html'));
 }).listen(3000)
 
 app.get('/map_view', function(req, res){                                                //Secondary Map View Route for testing
@@ -52,7 +50,7 @@ app.post('/submit', upload.single('fileToUpload'), (req,res) => {               
         })
         data.picture.contentType = req.file.mimetype
         data.save();
-        console.log(data);
+        //console.log(data);
 
         res.redirect('/submission_form');
      });
