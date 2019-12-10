@@ -7,33 +7,59 @@ form{
     padding: 10px;
 }
 
-label{
-    width: 50px;
-    display: inline-block;
-    text-align: right;
-    margin-right: 20px;
-}
+@media only screen and (min-width: 801px){
+    label{
+        width: 50px;
+        display: inline-block;
+        text-align: right;
+        margin-right: 20px;
+    }
 
-input[type=text], select{
-    width: 350px;
-    padding: 10px;
-    margin: 6px 0;
-    border: 1px solid #aaa;
-    border-radius: 4px;
+    input[type=text], select{
+        width: 350px;
+        padding: 10px;
+        margin: 6px 0;
+        border: 1px solid #aaa;
+        border-radius: 4px;
+    }
+    
+    input[type=number], select{
+        width: 350px;
+        padding: 10px;
+        margin: 6px 0;
+        border:1px solid #aaa;
+        border-radius: 4px;
+    }
 }
-
-input[type=number], select{
-    width: 350px;
-    padding: 10px;
-    margin: 6px 0;
-    border:1px solid #aaa;
-    border-radius: 4px;
-}
-
 input[type=submit]:hover {
     background-color: #88B04B;
 }
 
 input[type=file]:hover {
     background-color: #88B04B;
+}
+
+@media only screen and (max-width: 800px){
+    label{
+        width: 100px;
+        display: inline-block;
+        text-align: right;
+        margin-right: 20px;
+    }
+    
+    input[type=text], select{
+        width: 700px;
+        padding: 10px;
+        margin: 6px 0;
+        border: 1px solid #aaa;
+        border-radius: 4px;
+    }
+    
+    input[type=number], select{
+        width: 700px;
+        padding: 10px;
+        margin: 6px 0;
+        border:1px solid #aaa;
+        border-radius: 4px;
+    }
 }
