@@ -96,33 +96,30 @@ function query(position) {
         map:map,
         icon:icons['user'].icon
     });
+
     var markerArray = []
     $.get("/pull_data",longitude=long, latitude=lat).done(function(databaseArray){
-        for (i = 0; i < databaseArray.length; i++){
+        var img_marker;
+        for (var i = 0; i < databaseArray.length; i++){
             var frame = createFrame(databaseArray[i]);
             var window = createInfoWindow(frame);
             var img_pos = {lat:databaseArray[i].location[0],lng:databaseArray[i].location[1]}
-            var img_marker = new google.maps.Marker({
+            
+            img_marker = new google.maps.Marker({
                 position:img_pos,
                 map:map,
                 icon:icons['pic'].icon
             })
 
-            google.maps.event.addListener(img_marker,'click',placeMarker(map,window,img_pos))
+            img_marker.addListener('click',function(){
+                window.open(map,img_marker)
+            })
+
 
         }
     });
 }
 
-function placeMarker(map,window,position){
-    var marker = new google.maps.Marker({
-        position:position,
-        map:map,
-        icon:icons['pic'].icon
-    })
-    window.open(map,marker)
-
-}
 
 
 function createFrame(databaseObject)
