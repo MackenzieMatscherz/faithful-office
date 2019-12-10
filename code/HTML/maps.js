@@ -79,6 +79,10 @@ function createInfoWindow(frame)
 
 //DONE
 function query(position) {
+    var long = position.coords.longitude;
+    var lat = position.coords.latitude;
+    var pos = {lat:lat, lng:long};
+
     map.setCenter(pos)
     map.setZoom(12);
 
@@ -87,9 +91,6 @@ function query(position) {
         map:map,
         icon:icons['user'].icon
     });
-
-    var lat = position.coords.latitude;
-    var long = position.coords.longitude;
     $.get("/pull_data",longitude=long, latitude=lat).done(function(databaseArray){
         for (i = 0; i < databaseArray.length; i++){
             var frame = createFrame(databaseArray[i]);
