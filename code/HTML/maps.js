@@ -92,6 +92,7 @@ function query(position) {
         map:map,
         icon:icons['user'].icon
     });
+    var markerArray = []
     $.get("/pull_data",longitude=long, latitude=lat).done(function(databaseArray){
         for (i = 0; i < databaseArray.length; i++){
             var frame = createFrame(databaseArray[i]);
@@ -102,9 +103,10 @@ function query(position) {
                 map:map,
                 icon:icons['pic'].icon
             })
+            //markerArray.push(img_marker)
 
             google.maps.event.addListener(img_marker,'mouseover',function(){
-                window.open(map,this)
+                window.open(map,img_marker)
             })
             google.maps.event.addListener(img_marker,'mouseout',function(){
                 window.close()
