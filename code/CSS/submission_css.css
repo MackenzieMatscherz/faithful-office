@@ -41,14 +41,14 @@ input[type=file]:hover {
 
 @media only screen and (max-width: 800px){
     label{
-        width: 90%;
+        width: 150%;
         display: inline-block;
         text-align: left;
         margin-right: 20px;
     }
     
     input[type=text], select{
-        width: 90%;
+        width: 150%;
         padding: 10px;
         margin: 6px 0;
         border: 1px solid #aaa;
@@ -56,7 +56,7 @@ input[type=file]:hover {
     }
     
     input[type=number], select{
-        width: 90%;
+        width: 150%;
         padding: 10px;
         margin: 6px 0;
         border:1px solid #aaa;
