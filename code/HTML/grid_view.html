@@ -1,42 +1,27 @@
 <!DOCTYPE html>
-
 <HTML>
-  <HEAD>
-    <TITLE>Untitled | Grid View</TITLE>
-    <STYLE>
-      *{box-sizing: border-box;}
-      header {
-        background-color: #208D20;
-        padding: 1px;
-        text-align: left;
-        font-size: 30px;
-        color: black;
-      }    
-         
-    </STYLE>
+    <HEAD>
+        <TITLE>Untitled | List View</TITLE>
 
-  </HEAD>
+        <LINK HREF="../CSS/general_css.css" REL="stylesheet">
+        <LINK HREF="../CSS/grid_css.css" REL="stylesheet">
+    </HEAD>
+    <BODY>
+        <HEADER>
+            <h2>Untitled</h2>
+            <p style="text-align:right; font-size:60%;">
+                <!-- <button onclick = "window.location.href = 'map_view.html';" class = "button">Map View</button> -->
+                <A HREF="/map_view" class = "button">Map View</A>
+                <!-- <button onclick = "window.location.href = 'submission_form.html';">Submit Art</button> -->
+                <A HREF="/submission_form" class = "button">Submit Art</A>
+            </p>
+        </HEADER>
+        <div class="row"></div> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src = "populatesPage.js"></script>
+        <script>
+          var link = document.getElementsByClassName("link");
 
-  <BODY>
-    <HEADER>
-      <h2>Untitled</h2>
-      <p style="text-align:right; font-size:75%;">
-        <A HREF="/">Map View</A>
-        |   
-        <A HREF="/submission_form">Submit Art</A>
-      </p>
-    </HEADER>
-    <div class="img-frame">
-      <img src="thepicture.jpg" alt="picture"><br>
-      <lable for="title">Title</label>
-      <p>the title name goes here if we have it</p>
-      <label for="artist">Artist</label>
-      <p>The name of the artist if we have it</p>
-      <label for="uploader">Uploader</label>
-      <p>The name of the uploader if we have it</p>
-    </div>
-
-      
-  </BODY>
-
+        </script>
+    </BODY>
 </HTML>
