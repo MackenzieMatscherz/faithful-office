@@ -103,25 +103,23 @@ function query(position) {
                 map:map,
                 icon:icons['pic'].icon
             })
-            markerArray.push([img_marker,window])
-            // google.maps.event.addListener(img_marker,'mouseover',function(){
-            //     window.open(map,img_marker)
-            // })
-            // google.maps.event.addListener(img_marker,'mouseout',function(){
-            //     window.close()
-            // })
-        }
-        for(var i = 0;i<markerArray.length;i++){
-            var m = markerArray[i][0]
-            var w = markerArray[i][1]
-            m.addListener('mouseover',function(){
-                w.open(map,m);
-            });
-            m.addListener('mouseout',function(){
-                w.close();
+
+            google.maps.event.addListener(img_marker,'click',function(event){
+                placeMarker(map,window,img_pos)
             })
+
         }
     });
+}
+
+function placeMarker(map,window,position){
+    var marker = new google.maps.Marker({
+        position:position,
+        map:map,
+        icon:icons['pic'].icon
+    })
+    window.open(map,marker)
+
 }
 
 
