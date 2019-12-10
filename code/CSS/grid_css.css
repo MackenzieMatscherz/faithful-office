@@ -3,7 +3,7 @@
 }
 
 label{
-    color: #88B04B
+    color: #88B04B;
     text-decoration: bold;
 }
 
@@ -26,7 +26,7 @@ label{
 		display: inline-block;
 		flex: 25%;
 		height: 50vh;
-		max-width: 25%;
+		width: 32vw;
 		padding: 5px 10px;
 		float: left;
 		border-style: solid;
@@ -36,15 +36,18 @@ label{
 	}
 	.picture{
 		display: inline-block;
+		float: left;
 	}
 	.textbox{
 		display: inline-block;
+		float: left;
+		padding-left: 10px;
 	}
 }
 
 .picture {
 	margin: auto;
-	max-width: 100%;
+	max-width: 66%;
 	max-height: 75%;
 }
 #label {
