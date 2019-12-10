@@ -3,7 +3,11 @@
 }
 
 label{
+<<<<<<< HEAD
     color: #88B04B
+=======
+    color: #6D8D3D;
+>>>>>>> a369786f205f57f988e719b6938a7b8788287292
     text-decoration: bold;
 }
 
@@ -54,4 +58,3 @@ label{
 	max-width: 66%;
 }
 #label {
-}
