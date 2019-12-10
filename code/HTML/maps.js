@@ -5,6 +5,10 @@ function initMap() {
         center: {lat: 41.186355,lng:-102.175498}, 
         zoom: 4.5
     });
+    $('#map').css("height",($(window).height()*.9));
+    $('#map').css("width",$(window).width());
+    google.maps.event.trigger(map, 'resize');
+    map.setZoom( map.getZoom() );
    
 
     var marker;
@@ -178,3 +182,10 @@ function createFrame(databaseObject)
     picture.alt = "Alt";
     return frame;
 }
+
+$(window).resize(function(){
+    $('#map').css("height",($(window).height()*.9));
+    $('#map').css("width",$(window).width());
+    google.maps.event.trigger(map, 'resize');
+    map.setZoom( map.getZoom() );
+});

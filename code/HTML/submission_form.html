@@ -20,13 +20,13 @@
 
         <form id="submitForm" action="/submit" method="post" enctype="multipart/form-data" class="submitForm"> 
             <div>
-                <label for="name">Name</label>
-                <input type="text" id="name" name="username">
+                <label for="name">Uploader</label>
+                <input type="text" id="uploader" name="uploader">
             </div>
     
             <div>
                 <label for="artist">Artist</label>
-                <input type="text" id="artist" name="artistname">
+                <input type="text" id="artist" name="artist">
             </div>
 
             <div>
@@ -44,7 +44,7 @@
                 <input type="number" step="0.00001" id="longitude" name="longitude">
             </div>
 
-            <BR><input type="file" name="fileToUpload" accept="image/*" id="fileToUpload">
+            <BR><input type="file" name="fileToUpload" accept="image/*" required id="fileToUpload">
 
             <BR><BR>
 
