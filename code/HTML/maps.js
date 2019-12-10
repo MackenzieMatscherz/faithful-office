@@ -117,12 +117,12 @@ function createMarker(pos, window) {
         position: pos, 
         map: map,  // google.maps.Map  
     }); 
-    google.maps.event.addListener(marker, 'mouseover', function() { 
+    google.maps.event.addListener(marker, 'click', function() { 
        window.open(map, marker);
     }); 
-    google.maps.event.addListener(marker, 'mouseout', function() { 
-        window.close();
-     }); 
+    // google.maps.event.addListener(marker, 'mouseout', function() { 
+    //     window.close();
+    //  }); 
     return marker;  
 }
 
