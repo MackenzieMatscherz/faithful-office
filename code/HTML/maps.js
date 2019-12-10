@@ -104,11 +104,12 @@ function query(position) {
             })
             img_marker.addListener('mouseover',function(){
                 window.open(map,img_marker);
-                img_marker.addListener('mouseout',function(){
-                    window.close();
-                });
             });
-        
+            img_marker.addListener('mouseout',function(){
+                window.close();
+            });
+
+            // window.open(map,img_marker);
         }
     });
 }
