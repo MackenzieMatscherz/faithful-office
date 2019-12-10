@@ -7,6 +7,21 @@ HEADER {
     color: black;
 }
 
+#selected{
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border: 0.1em solid WhiteSmoke;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Helvetica;
+    font-weight: 100;
+    color: WhiteSmoke;
+    text-align: center;
+    transition: all 0.2s;
+}
+
 h2{
     position: absolute;
     top: .4em;
