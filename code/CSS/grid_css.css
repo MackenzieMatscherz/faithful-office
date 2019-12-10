@@ -3,7 +3,7 @@
 }
 
 label{
-    color: #88B04B;
+    color: #6D8D3D;
     text-decoration: bold;
 }
 
@@ -49,6 +49,4 @@ label{
 	margin: auto;
 	max-width: 66%;
 	max-height: 75%;
-}
-#label {
 }
