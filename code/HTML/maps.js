@@ -171,3 +171,10 @@ function createFrame(databaseObject)
     picture.alt = "Alt";
     return frame;
 }
+
+$(window).resize(function(){
+    $('#map').css("height",($(window).height()*.9));
+    $('#map').css("width",$(window).width());
+    google.maps.event.trigger(map, 'resize');
+    map.setZoom( map.getZoom() );
+});
