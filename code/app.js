@@ -50,7 +50,7 @@ app.post('/submit', upload.single('fileToUpload'), (req,res) => {               
         })
         data.picture.contentType = req.file.mimetype
         data.save();
-        console.log(data);
+        //console.log(data);
 
         res.redirect('/submission_form');
      });
