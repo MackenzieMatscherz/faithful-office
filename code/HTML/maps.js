@@ -89,7 +89,7 @@ function query(position) {
       };
       
     map.setCenter(pos)
-    map.setZoom(12);
+    map.setZoom(16);
 
     marker = new google.maps.Marker({
         position:pos, 
