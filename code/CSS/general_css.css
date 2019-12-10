@@ -7,6 +7,11 @@ HEADER {
     color: black;
 }
 
+#selected{
+    backgroud-color: WhiteSmoke;
+    color: #88B04B;
+}
+
 h2{
     position: absolute;
     top: .4em;
