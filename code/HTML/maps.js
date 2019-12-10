@@ -99,9 +99,10 @@ function query(position) {
 
     $.get("/pull_data",longitude=long, latitude=lat).done(function(databaseArray){
         var img_marker;
+        var window;
         for (var i = 0; i < databaseArray.length; i++){
             var frame = createFrame(databaseArray[i]);
-            var window = createInfoWindow(frame);
+            window = createInfoWindow(frame);
             var img_pos = {lat:databaseArray[i].location[0],lng:databaseArray[i].location[1]}
             
             img_marker = new google.maps.Marker({
