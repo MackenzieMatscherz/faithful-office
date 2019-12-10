@@ -71,6 +71,16 @@ function createInfoWindow(frame)
 }
 
 
+var iconBase ='http://maps.google.com/mapfiles/kml/shapes';
+var icons = {
+    pic: {
+      icon: 'http://maps.google.com/mapfiles/kml/shapes/square.png'
+    },
+    user: {
+      icon: 'http://maps.google.com/mapfiles/kml/shapes/man.png'
+    },
+  };
+  
 
 
 //DONE
@@ -78,16 +88,6 @@ function query(position) {
     var long = position.coords.longitude;
     var lat = position.coords.latitude;
     var pos = {lat:lat, lng:long};
-    var iconBase ='http://maps.google.com/mapfiles/kml/shapes';
-    var icons = {
-        pic: {
-          icon: 'http://maps.google.com/mapfiles/kml/shapes/square.png'
-        },
-        user: {
-          icon: 'http://maps.google.com/mapfiles/kml/shapes/man.png'
-        },
-      };
-      
     map.setCenter(pos)
     map.setZoom(16);
 
@@ -110,7 +110,9 @@ function query(position) {
 }
 
 function createMarker(pos, window) {
-    var marker = new google.maps.Marker({       
+    var marker = new google.maps.Marker({ 
+        animation: google.maps.Animation.DROP,
+        icon:icons['pic'],
         position: pos, 
         map: map,  // google.maps.Map  
     }); 
