@@ -5,6 +5,10 @@ html, body {
 	padding: 0;
 }
 
-.picture {
-	max-width: 100%;
+.frame {
+	width: 20vw;
+}
+
+.gm-style img {
+	width: 100%;
 }
