@@ -102,7 +102,7 @@ function query(position) {
                 map:map,
                 icon:icons['pic'].icon
             })
-            window.open(map,marker)
+            window.open(map,img_marker)
         }
     });
 }
