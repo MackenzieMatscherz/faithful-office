@@ -102,14 +102,13 @@ function query(position) {
                 map:map,
                 icon:icons['pic'].icon
             })
-            img_marker.addListener('mouseover',function(){
-                window.open(map,img_marker);
-            });
-            img_marker.addListener('mouseout',function(){
-                window.close();
-            });
 
-            // window.open(map,img_marker);
+            google.maps.event.addListener(img_marker,'mouseover',function(){
+                window.open(map,this)
+            })
+            google.maps.event.addListener(img_marker,'mouseout',function(){
+                window.close()
+            })
         }
     });
 }
