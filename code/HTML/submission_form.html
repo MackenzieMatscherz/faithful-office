@@ -9,12 +9,13 @@
 
     <BODY>
         <HEADER>
-            <h2>Untitled</h2>
+            <h2>The Gallery</h2>
             <p style="text-align:right; font-size:60%;">
                 <!-- <button onclick = "window.location.href = 'map_view.html';" class = "button">Map View</button> -->
                 <A HREF="/map_view" class = "button">Map View</A>
                 <!-- <button onclick = "window.location.href = 'grid_view.html';" class = "button">Grid View</button> -->
                 <A HREF="/grid_view" class = "button">Grid View</A>        
+                <A id="selected">Submit Art</A>
             </p>
         </HEADER>
 
@@ -34,7 +35,7 @@
                 <input type="text" id="title" name="title">
             </div>
 
-            <div>
+            <!-- <div>
                 <label for="title">Latitude</label>
                 <input type="number" step="0.00001" id="latitude" name="latitude">
             </div>
@@ -42,7 +43,7 @@
             <div>
                 <label for="title">Longitude</label>
                 <input type="number" step="0.00001" id="longitude" name="longitude">
-            </div>
+            </div> -->
 
             <BR><input type="file" name="fileToUpload" accept="image/*" required id="fileToUpload">
 
@@ -70,21 +71,21 @@
             }
             input.addEventListener('change',f);
 
-            // $(function() {                                          //On run
-            //     navigator.geolocation.getCurrentPosition(success);
-            // });
+            $(function() {                                          //On run
+                navigator.geolocation.getCurrentPosition(success);
+            });
 
-            // function success(pos) {                                 //If successfully found current location, fill in for form.
-            //     var latInput = $("<input>")
-            //         .attr("type", "hidden")
-            //         .attr("name", "latitude").val((pos.coords.latitude).toFixed(5));
-            //     var longInput = $("<input>")
-            //         .attr("type", "hidden")
-            //         .attr("name", "longitude").val((pos.coords.longitude).toFixed(5));
+            function success(pos) {                                 //If successfully found current location, fill in for form.
+                var latInput = $("<input>")
+                    .attr("type", "hidden")
+                    .attr("name", "latitude").val((pos.coords.latitude).toFixed(5));
+                var longInput = $("<input>")
+                    .attr("type", "hidden")
+                    .attr("name", "longitude").val((pos.coords.longitude).toFixed(5));
                 
-            //     $('#submitForm').append(latInput);
-            //     $('#submitForm').append(longInput);
-            // }
+                $('#submitForm').append(latInput);
+                $('#submitForm').append(longInput);
+            }
         </script>
         
     </BODY>

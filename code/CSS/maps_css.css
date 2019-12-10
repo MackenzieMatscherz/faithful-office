@@ -14,12 +14,20 @@ html, body {
 	width: 100%;
 }
 
-p{
-    text-indent: 30px;
-}
-
 label{
     color: #6D8D3D;
     background-color: WhiteSmoke;
     font-weight: bold;
+}
+
+@media only screen and (max-width: 1200px){
+    HEADER {
+        /* background-image: linear-gradient(90deg, #9AC991, #85DE73,#4CAF38,#269911,#89B281); */
+        background-color: #88B04B;
+        padding: 1px;
+        text-align: left;
+        font-size: 20px;
+        color: black;
+        
+    }
 }

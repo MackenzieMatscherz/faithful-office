@@ -74,7 +74,7 @@ app.get(('/success'), function(req, res){                                       
 app.get(('/pull_data'), function(req, res){                                             //pull data for map
     var curr_longitude = req.query.longitude;
     var curr_latitude = req.query.latitude;
-    mongoose.connect(connectionString, {useNewUrlParser: true, useUnifiedTopolology: true}, async function(err, client){
+    mongoose.connect(connectionString, {useNewUrlParser: true}, async function(err, client){
         if(err) {
             console.log('Error occurred while connecting to MongoDB Atlas...\n',err);
         }
@@ -87,7 +87,7 @@ app.get(('/pull_data'), function(req, res){                                     
           ]).limit(15);
             //TODO: Create proper Great Circle distance calculation - Currently finds absolute long/lat number <= 1
             //d=2*asin(sqrt((sin((lat1-lat2)/2))^2 + cos(lat1)*cos(lat2)*(sin((lon1-lon2)/2))^2))
-        console.log(images);
+        //console.log(images);
         res.json(images);
     });
 });
