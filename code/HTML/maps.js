@@ -102,10 +102,10 @@ function query(position) {
                 map:map,
                 icon:icons['pic'].icon
             })
-            img_marker.addEventListener('mouseover',function(){
+            img_marker.addListener('mouseover',function(){
                 window.open(map,img_marker);
             });
-            img_marker.addEventListener('mouseout',function(){
+            img_marker.addListener('mouseout',function(){
                 window.close();
             });
 
