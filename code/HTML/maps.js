@@ -95,7 +95,14 @@ function query(position) {
     $.get("/pull_data",longitude=long, latitude=lat).done(function(databaseArray){
         for (i = 0; i < databaseArray.length; i++){
             var frame = createFrame(databaseArray[i]);
-            createInfoWindow(frame);
+            var window = createInfoWindow(frame);
+            var img_pos = {lat:databaseArray[i].location[0],lng:databaseArray[i].location[1]}
+            var img_marker = new google.maps.Marker({
+                position:img_pos,
+                map:map,
+                icon:icons['pic'].icon
+            })
+            window.open(map,marker)
         }
     });
 }
