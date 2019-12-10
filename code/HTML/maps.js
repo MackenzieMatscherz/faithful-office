@@ -108,9 +108,7 @@ function query(position) {
                 icon:icons['pic'].icon
             })
 
-            google.maps.event.addListener(img_marker,'click',function(event){
-                placeMarker(map,window,img_pos)
-            })
+            google.maps.event.addListener(img_marker,'click',placeMarker(map,window,img_pos))
 
         }
     });
