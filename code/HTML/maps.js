@@ -120,7 +120,8 @@ function createMarker(pos, window) {
     }); 
     google.maps.event.addListener(marker, 'mouseout', function() { 
         window.close();
-     }); 
+    }); 
+
     return marker;  
 }
 
