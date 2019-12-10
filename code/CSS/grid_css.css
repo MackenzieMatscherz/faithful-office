@@ -1,23 +1,33 @@
 
 @media only screen and (max-width: 800px) {
-    
+    .frame{
+		display: inline-block;
+		flex: 25%;
+		max-width: 50%;
+		padding: 0 4px;
+		float: left;
+                border-style: solid;
+                border-width: 1px;
+                border-color: #aaa;
+                border-radius: 2px;
+	}
 }
 @media only screen and (min-width: 801px) {
     .frame{
-    }
-}
-.gm-style img {
-	max-width: 25%;
+		display: inline-block;
+		flex: 25%;
+		max-width: 25%;
+		padding: 0 4px;
+		float: left;
+                border-style: solid;
+                border-width: 1px;
+                border-color: #aaa;
+                border-radius: 2px;
+	}
 }
 
 .picture {
 	max-width: 100%;
 }
-
-.frame{
-	display: inline-block;
-	flex: 25%;
-	max-width: 25%;
-	padding: 0 4px;
-	float: left;
+#label {
 }

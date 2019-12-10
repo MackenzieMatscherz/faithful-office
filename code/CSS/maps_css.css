@@ -1,31 +1,13 @@
-#map {
-	height: 50%;
-	position: relative;
-	padding-bottom: 75%;
-	overflow: hidden;
-}
+/* #map {
+	/* padding: 0 50%; */
+} */
+
 html, body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
 }
 
-.gm-style img {
-	max-width: 25%;
-}
-
-.textcontainer{
-	overflow: auto;
-}
-.list{
-	margin: auto;
-	vertical-align: top;
-	text-align: left;
-	display: inline-block;
-	list-style-type: none;
-}
-#div{
-	display: inline-block;
-	/* float:left; */
-	width: 50%;
+.picture {
+	max-width: 100%;
 }
