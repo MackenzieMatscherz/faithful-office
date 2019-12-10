@@ -3,7 +3,7 @@ function initMap() {
     // var campus = {lat: 42.3896166, lng: -72.52946829999999};
     map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 41.186355,lng:-102.175498}, 
-        zoom: 4.5
+        zoom: 6
     });
     $('#map').css("height",($(window).height()*.9));
     $('#map').css("width",$(window).width());
