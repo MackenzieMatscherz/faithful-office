@@ -103,7 +103,7 @@ function query(position) {
                 map:map,
                 icon:icons['pic'].icon
             })
-            //markerArray.push(img_marker)
+            // markerArray.push(img_marker)
 
             google.maps.event.addListener(img_marker,'mouseover',function(){
                 window.open(map,img_marker)
