@@ -92,6 +92,7 @@ function query(position) {
         map:map,
         icon:icons['user'].icon
     });
+    
     $.get("/pull_data",longitude=long, latitude=lat).done(function(databaseArray){
         for (i = 0; i < databaseArray.length; i++){
             var frame = createFrame(databaseArray[i]);

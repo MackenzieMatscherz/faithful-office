@@ -1,9 +1,7 @@
-#map {
-	height: 50%;
-	position: relative;
-	padding-bottom: 75%;
-	overflow: hidden;
-}
+/* #map {
+	/* padding: 0 50%; */
+} */
+
 html, body {
 	height: 100%;
 	margin: 0;
