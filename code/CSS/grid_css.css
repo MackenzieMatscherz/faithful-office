@@ -3,7 +3,7 @@
 }
 
 label{
-    color: #88B04B
+    color: #88B04B;
     text-decoration: bold;
 }
 
@@ -29,10 +29,10 @@ label{
 		width: 32vw;
 		padding: 5px 10px;
 		float: left;
-                border-style: solid;
-                border-width: 3px;
-                border-color: #aaa;
-                border-radius: 4px;
+		border-style: solid;
+		border-width: 3px;
+		border-color: #aaa;
+		border-radius: 4px;
 	}
 	.picture{
 		display: inline-block;
