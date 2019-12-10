@@ -3,8 +3,8 @@
 }
 
 label{
-    color: #88B04B;
-    text-decoration: underline;
+    color: #88B04B
+    text-decoration: bold;
 }
 
 @media only screen and (max-width: 1200px) {
