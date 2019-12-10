@@ -25,7 +25,7 @@ HEADER {
 
 h2{
     position: absolute;
-    top: .4em;
+    top: .5em;
     left: .5em;
     margin: 0;
     float: left;
@@ -66,6 +66,8 @@ h2{
         font-size: 50%;
     } 
     h2{
-        font-size: 50%;
+        font-size: 60%;
+        padding-top: 15px;
+        padding-left: 10px;
     }
 }
