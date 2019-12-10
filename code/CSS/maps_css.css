@@ -7,8 +7,9 @@ html, body {
 	padding: 0;
     		}
 .pictures{
-	width:50%
+	max-width:50%;
 }
+
 .textcontainer{
 	overflow: auto;
 }
