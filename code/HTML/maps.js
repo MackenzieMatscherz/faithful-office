@@ -117,12 +117,12 @@ function createMarker(pos, window) {
         position: pos, 
         map: map,  // google.maps.Map  
     }); 
-    google.maps.event.addListener(marker, 'mouseover', function() { 
+    google.maps.event.addListener(marker, 'click', function() { 
        window.open(map, marker);
     }); 
-    google.maps.event.addListener(marker, 'mouseout', function() { 
-        window.close();
-     }); 
+    // google.maps.event.addListener(marker, 'mouseout', function() { 
+    //     window.close();
+    //  }); 
     return marker;  
 }
 
@@ -174,8 +174,18 @@ function createFrame(databaseObject)
     uploaderLabel.textContent = "Uploader";
     artistLabel.textContent = "Artist";
 
+    if (databaseObject.title === ""){
+        title.textContent = "Unknown";
+    }
+    else{
         title.textContent = databaseObject.title;
+    }
+    if (databaseObject.artist === ""){
+        artist.textContent = "Unknown";
+    }
+    else {
         artist.textContent = databaseObject.artist;
+    }
     uploader.textContent = databaseObject.uploader;
     picture.src = "data:" + databaseObject.picture.contentType + ";base64, " + databaseObject.picture.data;
     picture.alt = "Alt";
